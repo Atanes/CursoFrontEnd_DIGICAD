@@ -1,0 +1,35 @@
+<HTML>
+
+<HEAD>
+   <TITLE>Marquee no Netscape</TITLE>
+   <SCRIPT LANGUAGE="JavaScript">
+      var id;
+      var pause = 0;
+      var position = 0;
+      function Banner() {
+         var i;
+         var k;
+         var msg;
+         msg = document.BannerForm.message.value;
+         k = (66 / msg.length) + 1;
+         for (i = 0; i <= k; i++)
+            msg += " " + msg;
+         document.BannerForm.banner.value = msg.substring(position, position + 79);
+         if (position++ == document.BannerForm.message.value.length)
+            position = 0;
+         id = setTimeout("Banner()", 60);
+      }
+   </SCRIPT>
+</HEAD>
+
+<BODY TEXT="#FFFFFF" BGCOLOR="#c0c0c0" LINK="#00FFFF" VLINK="#FF0000" onLoad="Banner()">
+   <center>
+      <FORM NAME="BannerForm">
+         <INPUT TYPE="hidden" NAME="message"
+            VALUE="Este texto rolante aparece em qualquer Navegador - Alexandre Atanes de Jesus">
+         <INPUT TYPE="text" NAME="banner" SIZE="65">
+      </FORM>
+   </center>
+</BODY>
+
+</HTML>

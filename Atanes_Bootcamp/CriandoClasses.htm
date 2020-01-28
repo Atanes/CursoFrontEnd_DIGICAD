@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+
+<head>
+    <TITLE>Criação de uma classe e sua utilização</TITLE>
+    <META http-equiv=Content-Type content="text/html; charset=windows-utf-8">
+
+    <script>
+
+        //definicao do metodo matricula para a classe AlunoUniversitario 
+        function matricula(num_matricula) {
+            this.numMatricula = num_matricula
+        }
+
+        //definicao do metodo imprime para a classe AlunoUniversitario 
+        function imprime() {
+            document.getElementById("d_aluno").innerHTML += "Nome: " + this.nome + "<br>";
+            document.getElementById("d_aluno").innerHTML += "Idade: " + this.idade + "<br>";
+            document.getElementById("d_aluno").innerHTML += "Número de matrícula: " + this.numMatricula + "<br>";
+        }
+
+        //definicao do construtor da classe AlunoUniversitario
+        function AlunoUniversitario(nome, idade) {
+            this.nome = nome
+            this.idade = idade
+            this.numMatricula = null
+            this.matricula = matricula
+            this.imprime = imprime
+        }
+
+        function criaAluno() {
+            //criamos um aluno
+            meuAluno = new AlunoUniversitario("José Dias", 23)
+
+            //Imprimimos o aluno
+            meuAluno.imprime()
+
+            //Inserimos um numero de matricula 
+            meuAluno.matricula(305)
+
+            //re-imprime o aluno com o novo numero de matricula 
+            meuAluno.imprime()
+
+        }
+
+        function calculaArea() {
+            class Retangulo {
+                constructor(altura, largura) {
+                    this.altura = altura; this.largura = largura;
+                }
+                //Getter
+                get area() {
+                    return this.calculaArea()
+                }
+
+                calculaArea() {
+                    return this.altura * this.largura;
+                }
+            }
+            const quadrado = new Retangulo(10, 10);
+            console.log(quadrado);
+            document.getElementById("c_area").innerHTML = quadrado.calculaArea();
+        }
+    </script>
+</head>
+
+<body onload="criaAluno(); calculaArea()">
+    <H1>Criação de uma classe e sua utilização</H1><BR><BR>
+
+    <div id="d_aluno"></div>
+    <hr>
+    <div id="c_area"></div>
+</body>
+
+</HTML>

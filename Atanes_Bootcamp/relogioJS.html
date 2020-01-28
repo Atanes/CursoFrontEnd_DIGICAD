@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<HEAD>
+   <SCRIPT language="JavaScript1.2">
+
+      function dataAtual() {
+         var data = new Date();
+         var dataAtual = data.getDate() + "/" + (data.getMonth() + 1) + "/" + data.getFullYear();
+         document.getElementById("data").innerHTML = dataAtual;
+      }
+      function JSClock() {
+         var time = new Date();
+         var hour = time.getHours();
+         var minute = time.getMinutes();
+         var second = time.getSeconds();
+         var temp = "" + ((hour > 12) ? hour - 12 : hour);
+         temp += ((minute < 10) ? ":0" : ":") + minute
+         temp += ((second < 10) ? ":0" : ":") + second
+         temp += (hour >= 12) ? " P.M." : " A.M.";
+         document.getElementById("Relogio").innerHTML = temp;
+         id = setTimeout("JSClock()", 1000);
+      }
+//-->
+   </SCRIPT>
+</HEAD>
+
+<body onload="JSClock(); dataAtual()">
+   <h3>Data</h3>
+   <div id="data"></div>
+   <h3>Hora</h3>
+   <div id="Relogio"></div>
+
+   <div>
+      <h3>Métodos de Date</h3>
+      <p>getDate() - Obtém o dia do mês (numérico de 1 a 31)</p>
+      <p>getDay() - Obtém o dia da semana (0 a 6)</p>
+      <p>getMonth() - Obtém o mês (numérico de 0 a 11)</p>
+      <p>getYear() - Obtém o ano</p>
+      <p>getHours() - Obtém a hora (numérico de 0 a 23)</p>
+      <p>getMinutes() - Obtém os minutos (numérico de 0 a 59)</p>
+      <p>getSeconds() - Obtém os segundos (numérico de 0 a 59)</p>
+   </div>
+</body>
+
+</html>

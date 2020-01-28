@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Documento sem título</title>
+
+<style>
+    html, body {
+      height: 100%;
+      min-height: 100%;
+    }
+     
+    body {
+      font: 15px arial;
+      color: rgba(0, 0, 0, .7);
+    }
+     
+	 a {
+		font-family:Verdana, Geneva, sans-serif;
+		font-size:18px;	 
+	}
+	 /* unvisited link */
+	a:link {
+		color: blue;
+	}
+	
+	/* visited link */
+	a:visited {
+		color: red;
+	}
+	
+	/* mouse over link */
+	a:hover {
+		color: hotpink;
+	}
+	
+	/* selected link */
+	a:active {
+		color: blue;
+	}
+	 
+	.imagen_menu {
+		border-radius: 40%;
+		vertical-align: -5px;
+	}
+    .centralizar {
+      display: -webkit-flex:;
+      display: flex;
+      -webkit-align-items: center;
+      align-items: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+	  margin: 15px 15px 15px 15px;
+    }
+     
+    #centro {
+    	width:400px;
+    	height:400px;
+    	position:absolute;
+    	top:50%;
+    	left:50%;
+    	margin-top:-200px;
+    	margin-left:-200px;
+    }
+	.button {
+    background-color: #0066CC; /* Blue */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+	.button1 {border-radius: 2px;}
+	.button2 {border-radius: 4px;}
+	.button3 {border-radius: 8px;}
+	.button4 {border-radius: 12px;}
+	.button5 {border-radius: 50%;}
+	
+	input[type=text] {
+    width: 100%;
+    padding: 10px 18px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+</style>
+</head>
+
+<body>
+
+<div align="right">
+  <div class="header"><a style="margin-right: 5px;" href="https://www.google.com/intl/pt-BR/mail/help/about.html">Gmail</a><a style="margin-right: 5px;" href="http://www.santosfc.com.br">Imagens</a><a href="http://www.santosfc.com.br"><img class="imagen_menu" src="imagens/CaricaturaAtanes.png" width="25" title="Atanes"/></a><!-- end .header --></div>
+  </div>
+  <div id="centro">
+
+    <div class="centralizar"><img src="imagens/2016-doodle.gif" /></div>
+    <div class="centralizar"><input type="text" /></div>
+    <div class="centralizar">
+    <button onclick="window.location.href='http://www.google.com.br'" class="button button2">Pesquisa Google</button>
+    <button class="button button2" onclick="window.location.href='http://www.metodista.br'">Estou com sorte</button>
+    </div>
+
+  <div class="footer">
+    <!-- end .footer --></div>
+  <!-- end .container --></div>
+</body>
+</html>

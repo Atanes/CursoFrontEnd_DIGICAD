@@ -1,0 +1,153 @@
+<html>
+
+<head>
+	<meta http-equiv="Content-Language" content="pt-br">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Atividade 1</title>
+
+	<!-- Inicio Exercicio -->
+	<script LANGUAGE="JavaScript">
+
+		//Funções Gerais
+		function verifyOperator(nomeCampo) {
+			if (nomeCampo.value != "+" || nomeCampo.value != "-" || nomeCampo.value != "*" || nomeCampo.value != "/") {
+				alert("Preencha devidamente o campo " + nomeCampo);
+				nomeCampo.focus();
+				return false;
+			}
+		}
+
+		//Funções Específicas
+		function isEmpty(strValue) {
+			if (strValue.value == "")
+				return (false);
+			else
+				return (true);
+		}
+
+		function isNumber(strValue) {
+			var invalidChar = false;
+			numero = strValue.value
+			for (x = 0; x <= numero.length; x++) {
+				var usedChar = numero.charAt(x); if (usedChar != "." && usedChar != "," &&
+					usedChar != "-") { if (isNaN(usedChar)) invalidChar = true; }
+			} return invalidChar;
+		}
+
+		function Calcula() {
+			for (i = 0; i < document.Atividade.length; i++) {
+				if (document.Atividade.elements[i].type == "text" && document.Atividade.elements[i].value == "" && document.Atividade.elements[i].name != "Resultado") {
+					alert("Preencha devidamente o campo " + document.Atividade.elements[i].name);
+					document.Atividade.elements[i].focus();
+					return (false);
+				}
+				if (document.Atividade.elements[i].name == " Fone" || document.Atividade.elements[i].name == "Numero1" ||
+					document.Atividade.elements[i].name == "Numero2") {
+					if (isNumber(document.Atividade.elements[i])) {
+						alert("Preencha o campo " + document.Atividade.elements[i].name + " apenas com números");
+						document.Atividade.elements[i].focus(); return (false);
+					}
+				}
+			}
+
+			switch (document.Atividade.Operador.value) {
+				case "+": document.Atividade.Resultado.value = (parseFloat(document.Atividade.Numero1.value) +
+					parseFloat(document.Atividade.Numero2.value));
+					break;
+				case "-":
+					document.Atividade.Resultado.value = (parseFloat(document.Atividade.Numero1.value) -
+						parseFloat(document.Atividade.Numero2.value));
+					break;
+				case "/":
+					document.Atividade.Resultado.value = (parseFloat(document.Atividade.Numero1.value) /
+						parseFloat(document.Atividade.Numero2.value));
+					break;
+				case "*":
+					document.Atividade.Resultado.value = (parseFloat(document.Atividade.Numero1.value) *
+						parseFloat(document.Atividade.Numero2.value));
+					break;
+				default: alert("Você não digitou um operador válido! \n	Favor escolher entre +, -, / ou *");
+					document.Atividade.Operador.focus()
+			}
+		}
+	</script>
+</head>
+
+<body>
+
+	<div align="center">
+		<form method="POST" name="Atividade">
+			<div align="center">
+				<center>
+					<table border="1" width="41%">
+						<tr>
+							<td width="200%" align="left" colspan="2" bgcolor="#C0C0C0">
+								<p align="center"><b>Atividade 1</b>
+							</td>
+						</tr>
+						<tr>
+							<td width="68%" align="left" bgcolor="#008080">
+								<font color="#FFFFFF"><b>Nome</b></font>
+							</td>
+							<td width="140%" align="left">
+								<p align="center"><input type="text" name="Nome" size="23"></p>
+							</td>
+						</tr>
+						<tr>
+							<td width="68%" align="left" bgcolor="#008080">
+								<font color="#FFFFFF"><b>Telefone</b></font>
+							</td>
+							<td width="140%" align="left">
+								<p align="center"><input type="text" name="Fone" size="23"></p>
+							</td>
+						</tr>
+						<tr>
+							<td width="68%" align="left" bgcolor="#008080">
+								<font color="#FFFFFF"><b>Número
+										- 1</b></font>
+							</td>
+							<td width="140%" align="left">
+								<p align="center"><input type="text" name="Numero1" size="23"></p>
+							</td>
+						</tr>
+						<tr>
+							<td width="68%" align="left" bgcolor="#008080">
+								<font color="#FFFFFF"><b>Número
+										- 2</b></font>
+							</td>
+							<td width="140%" align="left">
+								<p align="center"><input type="text" name="Numero2" size="23"></p>
+							</td>
+						</tr>
+						<tr>
+							<td width="68%" align="left" bgcolor="#008080">
+								<font color="#FFFFFF"><b>Operação</b></font>
+							</td>
+							<td width="140%" align="left">
+								<p align="center"><input type="text" name="Operador" size="23"></p>
+							</td>
+						</tr>
+						<tr>
+							<td width="68%" align="left" bgcolor="#008080">
+								<font color="#FFFFFF"><b>Resultado</b></font>
+							</td>
+							<td width="140%" align="left">
+								<p align="center">
+									<input type="text" name="Resultado" size="23">
+								</p>
+							</td>
+						</tr>
+					</table>
+				</center>
+			</div>
+
+			<p>
+				<input type="button" value="Calcular" name="B1" onClick="Calcula(document.Atividade.Operador)">
+				<input type="reset" value="Limpar" name="B2">
+			</p>
+		</form>
+	</div>
+
+</body>
+
+</html>

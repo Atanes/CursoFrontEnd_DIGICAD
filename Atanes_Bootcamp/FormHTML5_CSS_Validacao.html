@@ -1,0 +1,103 @@
+﻿<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+	<head>
+		<title>--Formulário para Cadastro de Reserva--</title> 
+		<meta charset=utf-8>
+		<link rel="stylesheet" href="bootstrap-4.4.1-dist/css/bootstrap.min.css" type="text/css">
+		<link rel="stylesheet" href="bootstrap-4.4.1-dist/css/bootstrap.css"  type="text/css">
+	</head> 
+	<body>
+    	<div class="row">
+            <h1 align="center" class="col-md-12"><span class="glyphicon glyphicon-bed" aria-hidden="true"></span> 
+                Faça a sua reserva
+            </h1>
+        </div>
+        <form class="form-horizontal" role="form" action="reservaOK.html" oninput="total.value = (nights.valueAsNumber * 99) + (guests.valueAsNumber - 1) * 10)">
+        
+   		<div class="form-group has-feedback">
+      		<label class="col-sm-3 control-label">Nome completo: </label>
+      
+      		<div class="col-sm-6">
+            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+            	<input class="form-control" type="text" id="full_name" name="full_name" placeholder="Jane Doe" required>
+      		</div>
+   		</div>
+   
+   		<div class = "form-group has-feedback">
+      		<label class="col-sm-3 control-label">Endereço de e-mail: </label>
+      
+      		<div class = "col-sm-6">
+            <span class="form-control-feedback">@</span>
+            <input class="form-control" type="email" id="email_addr" name="seunome@dominio.com" required 
+   					oninput="check(this)">
+      		</div>
+   		</div>
+        
+        <div class = "form-group has-feedback">
+      		<label class="col-sm-3 control-label">Confirmar e-mail: </label>
+      
+      		<div class = "col-sm-6">
+            <span class="form-control-feedback">@</span>
+            <input class="form-control" type="email" id="email_addr_confirm" name="seunome@dominio.com" required 
+   					oninput="check(this)">
+      		</div>
+   		</div>
+        
+        <div class="form-group has-feedback">
+      		<label class="col-sm-3 control-label">Data de chegada: </label>
+      
+      		<div class="col-sm-6">
+            	<span class="glyphicon glyphicon-calendar form-control-feedback"></span>
+         		<input class="form-control" type="date" id="arrival_dt" required>
+      		</div>
+   		</div>
+        
+        <div class="form-group">
+      		<label class="col-sm-3 control-label">Nº de Noites:</label>
+      		
+            <div class="col-sm-1">
+            	<input class="form-control col-sm-1" type="number" id="nights" name="nights" value="1" min="1" max="30" required>
+            </div>
+            <label class="col-sm-2 control-label text-left">(Diária de R$ 109,00)</label>
+            <label class="col-sm-2 control-label">Nº de hospedes:</label>
+            <div class="col-sm-1">
+            	<input class="form-control" type="number" id="guests" name="guests" value="1" min="1" max="4" required>
+      		</div>
+   		</div>
+        
+        <div class = "form-group">
+      		<label class="col-xs-offset-3 col-sm-5 control-label">Obs: Para cada hospede adicional é cobrado o valor de R$ 70,00 por noite!!
+            </label>
+   		</div>
+        <div class="form-group">
+        	<label class="col-sm-3 control-label">Código da Promoção:</label>
+            <div class="col-sm-6">
+            	<input class="form-control" type="text" id="promo" name="promo" pattern="[A-Za-z0-9]{6}" title="Códigos promocionais devem ter 6 caracteres alfanuméricos!">
+      		</div>
+        </div>
+        <div class="form-group"> 
+                <label class="col-sm-3 control-label">Valor total:</label>
+                <div class="col-sm-6">
+                	R$<output id="total" name="total">99</output>,00
+                </div>
+                    
+        </div>
+ 
+            <button class="btn btn-info btn-lg col-xs-offset-3 col-sm-2" type="submit">
+  				<span class="glyphicon glyphicon-check" aria-hidden="true"></span> Confirmar Reserva
+			</button>
+	</form>
+
+<script>
+function check(input) {
+  if (input.value != document.getElementById('email_addr').value) {
+    input.setCustomValidity('The two email addresses must match.');
+  } else {
+    // input is valid -- reset the error message
+    input.setCustomValidity('');
+  }
+}
+</script>
+	</body> 
+</html>
+

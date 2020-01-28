@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <script language="JavaScript">
+	msg = "Bem vindo a Minha Home Page...      ";
+	function roda(){
+	  msg = msg.substring(1,msg.length)+msg.substring(0,1);
+	  document.getElementById("myText").innerHTML = msg;
+	  setTimeout("roda()",100);
+	}
+      </script>
+   </head>
+   <body onload="roda()"> 
+         <h1>Texto rolando</h1>
+         <p id="myText"></p>
+   </body>
+</html>

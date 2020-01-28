@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HTML Tutorial -2</title>
+    <meta charset="UTF-8">
+    <script src="https://kit.fontawesome.com/a30559e34e.js" crossorigin="anonymous"></script>
+    <link href="bootstrap-4.4.1-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/estiloAtanes.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <nav class="navbar navbar-expand-sm bg-light navbar-light justify-content-between">
+
+                <ul class="navbar-nav">
+                    <a class="navbar-brand" href="#">
+                        <img src="imagens/chewbacca.png" alt="Logo" style="width:25px;">
+                    </a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cadastro.html">Cadastro</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contato.html">Contato</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#rodape">Sobre nós</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.w3schools.com">W3Schools</a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">
+                        <i class="fas fa-door-open"></i>
+                            Logout</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">
+                        <i class="fas fa-sign-in-alt"></i>
+                            Login</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+
+            </nav>
+
+        </header>
+
+        <section>
+            <article title="Tags para imagens">
+                <h4>Brincando com imagens</h4>
+                <div class="row justify-content-between align-items-center">
+                    <img src="imagens\cachorro.jpg">
+
+                    <img src="imagens\santos\Santos_Pele.gif" alt="Melhor time do mundo!!" width="150" height="150"
+                        title="Melhor time do mundo!!">
+
+                    <figure style="text-align:center">
+                        <img src="imagens\pagconstrucao.gif">
+                        <figcaption>Página em construção!</figcaption>
+                    </figure>
+
+                    <figure style="text-align:center">
+                        <img src="imagens\darth-vader.png" width="70px">
+                        <figcaption>Menino malvado!</figcaption>
+                    </figure>
+                </div>
+            </article>
+
+            <article>
+                <h4>Exemplo simples de botão</h4>
+                <button class="btn btn-primary">Clicar</button>
+                <button type="button" class="btn btn-outline-success">Clicar</button>
+            </article>
+
+            <article>
+                <h4>Exemplos simples de listas</h4>
+                <div class="row">
+                    <div class="col-6">
+                        <h5>não ordenada</h5>
+                        <ul class="list-group">
+                            <li class="list-group-item">Coffee</li>
+                            <li class="list-group-item">Tea</li>
+                            <li class="list-group-item">Milk</li>
+                        </ul>
+                    </div>
+                    <div class="col-6">
+                        <h5>ordenada</h5>
+                        <ol class="list-group list-group-numbered">
+                            <li class="list-group-item">Coffee</li>
+                            <li class="list-group-item">Tea</li>
+                            <li class="list-group-item">Milk</li>
+                        </ol>
+                    </div>
+                </div>
+            </article>
+            <article>
+                <h4>Exemplo simples de uma tabela</h4>
+                <table class="table table-striped table-hover table-sm">
+                    <thead>
+                        <tr class="table-primary">
+                            <th scope="col">#</th>
+                            <th scope="col">First</th>
+                            <th scope="col">Last</th>
+                            <th scope="col">Handle</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>@twitter</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="table table-striped table-hover table-sm table-dark">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">First</th>
+                            <th scope="col">Last</th>
+                            <th scope="col">Handle</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>@twitter</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+
+            <article>
+                <h4>Brincando com arquivos de midia</h4>
+                <div class="row">
+                    <div class="col-6">
+                        <h5>Vídeo</h5>
+                        <video src="midia/ALIEN_MUSICAL.ogg" controls></video>
+                    </div>
+                    <div class="col-6">
+                        <h5>audio</h5>
+                        <audio src="midia/Dias de luta.mp3" controls></audio>
+                    </div>
+                </div>
+                <h4>Exemplo de inclusão de um Vídeo do YouTube na sua página</h4>
+                <div class="row justify-content-center">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/R6EUW2h9xgI" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+
+                </div>
+            </article>
+        </section>
+
+        <footer id="rodape">
+            <div class="card">
+                <div class="card-header">
+                    Aqui é o rodapé da página!
+                </div>
+                <div class="card-body">
+                    <a class="btn btn-primary" href="#inicio">Inicio</a>
+                    <a class="btn btn-success" href="contato.html">Contato</a>
+                    <a class="btn btn-info" href="cadastro.html">Cadastro</a>
+                    <p>&copy; professor Atanes</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

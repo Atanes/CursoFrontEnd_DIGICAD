@@ -1,0 +1,87 @@
+kkk
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+
+<head>
+	<title>Trabalhando com classes em JS</title>
+	<script>
+		var numero = new Array(5);
+		var registros = 0;
+		function Aluno() {
+			var nome;
+			var matricula;
+			var idade;
+
+			this.getNome = function () {
+				return nome;
+			};
+
+			this.setNome = function (value) {
+				nome = value;
+			};
+
+			this.getMatricula = function () {
+				return matricula;
+			};
+
+			this.setMatricula = function (value) {
+				matricula = value;
+			};
+
+			this.getIdade = function () {
+				return idade;
+			};
+
+			this.setIdade = function (value) {
+				idade = value;
+			};
+		}
+
+		function LimpaCampos() {
+			document.fCadastro.reset();
+			document.getElementById("nome").focus();
+		}
+
+		function Cadastrar() {
+			aluno = new Aluno();
+			aluno.setNome(document.getElementById("nome").value);
+			aluno.setMatricula(document.getElementById("matricula").value);
+			aluno.setIdade(document.getElementById("idade").value);
+			numero.unshift(aluno);
+			LimpaCampos();
+			document.getElementById("Registros").innerHTML = "Quantidade de registros realizados: " + ++registros;
+		}
+
+		function Mostrar() {
+			for (var i = 0; i < numero.length; i++) {
+				if (numero[i] != null) {
+					console.log(numero[i].getNome());
+				}
+
+			}
+
+		}	 
+	</script>
+
+</head>
+
+<body>
+	Teste de mudan&ccedil;a de cor do fundo da p&aacute;gina e do texto
+
+	<form name="fCadastro">
+		<labe>Nome:</labe>
+		<input type="text" id="nome">
+		<labe>Matricula:</labe>
+		<input type="text" id="matricula">
+		<labe>Idade:</labe>
+		<input type="text" id="idade">
+		<input type="Button" name="cadastrar" value="Cadastrar" onclick="Cadastrar()">
+		<input type="Button" name="mostrar" value="Mostrar" onclick="Mostrar()">
+	</form>
+	<p id="Registros"></p>
+
+
+</body>
+
+</html>

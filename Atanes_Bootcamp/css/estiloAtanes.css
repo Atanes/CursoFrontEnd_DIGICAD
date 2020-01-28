@@ -1,0 +1,22 @@
+/* Formatação de lista ordenadas em conjunto com o Bootstrap 4 */
+.list-group-numbered { list-style: decimal inside; }
+.list-group-alpha { list-style: lower-alpha inside; }
+.list-group-roman { list-style: lower-roman inside; }
+.list-group-alpha >li, .list-group-numbered >li { display: list-item }
+
+/* Formatação adicional para os titulos */
+h1, h2, h3, h4{
+    margin-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid teal;
+}
+
+/* Formatação adicional para o rodapé */
+footer {
+    margin-top: 10px;
+    background-color: thistle;
+}
+
+footer .card-header{
+    background-color: teal;
+}

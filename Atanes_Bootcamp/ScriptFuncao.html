@@ -1,0 +1,38 @@
+<html>
+
+<head>
+	<script language="JavaScript">
+		function ano(x) {
+			var resultado = "";
+			if (x % 2 == 0)
+				resultado = "Esse ano é par. ";
+			else
+				resultado = "Esse ano é impar. ";
+			return resultado;
+		}
+		function limpa() {
+			document.form1.reset();
+		}
+		function escreve(form) {
+			//for(x=1 ; x<=5 ; x++)
+			setTimeout(form.txtdata.value = Date(), 2000);
+			setTimeout(form.txtdata.value = Date(), 2000);
+			setTimeout(form.txtdata.value = Date(), 2000);
+			setTimeout(form.txtdata.value = Date(), 2000);
+		}
+		document.write("<h1> Obrigado(a) <h1>");
+		document.writeln("<h1> Atanes <h1>");
+	</script>
+</head>
+
+<body>
+	<form name="form1">
+		Digite um ano: <input type="text" name="textoano" size=4><br>
+		<input type="text" name="txtdata" size=20><br>
+		<input type="button" value="Clique Aqui" onClick="alert(ano(textoano.value))">
+		<input type="button" value="Escrever" onClick="escreve(this.form)">
+		<input type="button" value="Limpa Documento" onClick="limpa()">
+	</form>
+</body>
+
+</html>

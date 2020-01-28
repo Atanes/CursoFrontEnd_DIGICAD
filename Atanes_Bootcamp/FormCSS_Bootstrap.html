@@ -1,0 +1,59 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+	<head>
+		<title>--Formulário Contato--</title> 
+		<meta charset=utf-8>
+		<link rel="stylesheet" href="bootstrap-4.4.1-dist/css/bootstrap.min.css" type="text/css">
+		<link rel="stylesheet" href="bootstrap-4.4.1-dist/css/bootstrap.css"  type="text/css">
+	</head> 
+	<body>
+    	<div class="row">
+            <h1 align="center" class="col-md-8"><span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span> 
+                Entre em contato</span>
+            </h1>
+        </div>
+        <form class="form-horizontal" role="form" action="Exercicio2_DSD.html">
+
+   		<div class="form-group has-feedback">
+      		<label class="col-sm-2 control-label">Nome: </label>
+      
+      		<div class="col-sm-6">
+            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+         		<input class="form-control" id="nome" type="text" placeholder="José da Silva Souza" pattern="[A-Za-z ]+" required/>
+      		</div>
+   		</div>
+   
+   		<div class = "form-group has-feedback">
+      		<label class="col-sm-2 control-label">E-mail: </label>
+      
+      		<div class = "col-sm-6">
+            <span class="form-control-feedback">@</span>
+         		<input class="form-control" id="email" type="email" placeholder="josess@globo.com" />
+      		</div>
+   		</div>
+        
+        <div class="form-group has-feedback">
+      		<label class="col-sm-2 control-label">Data de nascimento: </label>
+      
+      		<div class="col-sm-6">
+            	<span class="glyphicon glyphicon-calendar form-control-feedback"></span>
+         		<input class="form-control" type="date" id="dtnasc" required>
+      		</div>
+   		</div>
+        
+        <div class = "form-group">
+      		<label class="col-sm-2 control-label">Comentários: </label>
+      
+      		<div class = "col-sm-6">
+         		<textarea class="form-control" rows="3" placeholder="Deixe sua opnião"></textarea>
+      		</div>
+   		</div>
+        
+      		<button class="btn btn-info btn-lg col-xs-offset-2 col-sm-1" type="submit">
+  				<span class="glyphicon glyphicon-star" aria-hidden="true"></span> Enviar
+			</button>
+
+	</form>
+	</body> 
+</html>
+

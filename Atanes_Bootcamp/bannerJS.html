@@ -1,0 +1,25 @@
+<HTML>
+
+<HEAD>
+    <TITLE>Rolando uma Mensagem</TITLE>
+    <script language="JavaScript">
+
+        Mensagem = "Ibest.Masters - O melhor caminho para um Site de Sucesso!";
+        Espacos = "..... .....";
+        Posicao = 0;
+        function RolaMensagem() {
+            document.getElementById("banner").innerHTML = Mensagem.substring(Posicao, Mensagem.length)
+                + Espacos + Mensagem.substring(0, Posicao); Posicao++;
+            if (Posicao > Mensagem.length) Posicao = 0;
+            setTimeout("RolaMensagem()", 200);
+        }
+
+    </script>
+</HEAD>
+
+<body onload="RolaMensagem()">
+    <H1>Exemplo de Rolagem de Mensagens na barra de Status do Navegador</H1>
+    <div id="banner"></div>
+</body>
+
+</HTML>

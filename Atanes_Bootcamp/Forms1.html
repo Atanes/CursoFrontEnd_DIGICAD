@@ -1,0 +1,89 @@
+<html>
+
+<head>
+	<title>Aula 14 - Curso JavaScript</title>
+	<SCRIPT LANGUAGE="JavaScript">
+
+		function consumo(Dado_form) {
+			var x = parseFloat(Dado_form.km.value);
+			var y = parseFloat(Dado_form.lts.value);
+			result = (x / y);
+
+			Dado_form.Resposta.value = result.toFixed(3);
+		}
+
+		//defini��o dos arrays com o nome das cidades
+		var cidades_1 = new Array("-", "Andalucia", "Asturias", "Baleares", "Canarias", "Castilla y Leon", "Castilla-La Mancha", "...");
+		var cidades_2 = new Array("-", "Rio de Janeiro", "Bahia", "São Paulo", "Santa Catarina", "Minas Gerais", "...");
+		var cidades_3 = new Array("-", "Algarve", "Alentejo", "Norte", "Vale do Tejo", "...");
+		var cidades_4 = new Array("-", "Aisne", "Creuse", "Dordogne", "Essonne", "Gironde ", "...");
+
+		//fun��o para mudar a lista das cidades de acordo com a escolha do pa�s
+		function muda_cidade() {
+			//pega o nome do pa�s selecionado
+			var pais;
+			pais = document.f1.pais[document.f1.pais.selectedIndex].value;
+			if (pais != 0) {
+				//seleciona o array de cidades adequado
+				cidades = eval("cidades_" + pais);
+				//verifica o numero de cidades listadas
+				num_cidades = cidades.length;
+				//seta o numero de cidades na combo
+				document.f1.Cbocidades.length = num_cidades;
+				//para cada cidade do array � introduzido um novo valor na combo
+				for (i = 0; i < num_cidades; i++) {
+					document.f1.Cbocidades.options[i].value = cidades[i];
+					document.f1.Cbocidades.options[i].text = cidades[i];
+				}
+			} else {
+				//se nenhum pa�s foi selecionado altero o tamanho da combo
+				document.f1.Cbocidades.length = 1;
+				//Insiro um simbolo na unica linha da combo;
+				document.f1.Cbocidades.options[0].value = "-";
+				document.f1.Cbocidades.options[0].text = "-";
+			}
+			//marco como seleccionada la opci�n primera de provincia
+			document.f1.Cbocidades.options[0].selected = true;
+		}
+
+		function abrejanela() {
+			window.open("http://www.estadao.com.br");
+		}
+
+
+	</script>
+</head>
+
+<body>
+	Projeto Aprenda Em Casa - exemplo de função em JavaScript
+	<FORM NAME="Entrada_dados">
+		Quilometragem percorrida?
+		<INPUT TYPE="text" NAME="km" SIZE="10">
+		<P>
+			Quantidade total de litros do abastecimento?
+			<INPUT TYPE="text" NAME="lts" SIZE="10">
+			<P>
+				<INPUT TYPE="button" VALUE="Verifica consumo" OnClick="consumo(this.form)">
+				<P>
+					Consumo médio de:
+					<INPUT TYPE="text" NAME="Resposta" SIZE="10">
+					<P>
+	</FORM>
+	<hr>
+	<form name="f1">
+		País: <select name=pais onchange="muda_cidade()">
+			<option value="0" selected>Selecione...
+			<option value="1">Espanha
+			<option value="2">Brasil
+			<option value="3">Portugal
+			<option value="4">França
+		</select>
+
+		Cidade: <select name=Cbocidades>
+			<option value="-">-
+		</select><br><br>
+		<INPUT TYPE="button" VALUE="Nova Janela" OnClick="abrejanela()">
+	</form>
+</body>
+
+</html>

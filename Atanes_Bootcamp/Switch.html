@@ -1,0 +1,65 @@
+<html>
+
+<head>
+	<title>Teste</title>
+	<meta charset="utf-8">
+	<script>
+		var cor = parseInt(window.prompt("Qual é o sua cor favorita? 1-Amarelo 2-Azul 3-Preto 4-Rosa 5-Vermelho"));
+
+		function isNumber(numero) {
+			var CaractereInvalido = false;
+
+			for (i = 0; i <= numero.length; i++) {
+				var caracter = numero.charAt(i);
+
+				if (caracter != "." && caracter != "," && caracter != "-") {
+
+					if (isNaN(caracter)) CaractereInvalido = true;
+
+				}
+			}
+			return CaractereInvalido;
+		}
+
+		function ChangeChar(pStrText) {
+			var len = pStrText.length;
+			var pos;
+			var vStrnewtext = "";
+			var pos1;
+
+			for (pos = 0; pos < len; pos++) {
+				alert(pStrText.charAt(pos) + " " + pos);
+				if (pos == 9) {
+
+					vStrnewtext = pStrText.substring(7, pos + 1);
+
+				}
+			}
+			return vStrnewtext;
+		}
+
+
+	</script>
+</head>
+
+<body onload="alert(isNumber('12.098+03'))">
+	<script>
+		switch (cor) {
+			case 1: document.bgColor = "yellow";
+				break;
+			case 2: document.bgColor = "blue";
+				break;
+			case 3: document.bgColor = "black";
+				break
+			case 4: document.bgColor = "pink";
+				break;
+			case 5: document.bgColor = "red";
+				break;
+		}
+
+		alert(ChangeChar('computador'));
+
+	</script>
+</body>
+
+</html>

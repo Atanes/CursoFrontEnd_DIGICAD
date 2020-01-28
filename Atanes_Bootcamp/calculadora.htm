@@ -1,0 +1,47 @@
+<html>
+    <script language="JavaScript">
+	
+        function guarda(caractere) {
+        window.document.forms[0].num.value += caractere
+        }
+        function MostraResultado() {
+        window.document.forms[0].num.value = eval(window.document.forms[0].num.value)
+        }
+        function Limpar() {
+        window.document.forms[0].num.value = ""
+        }
+    </script>
+    <body>
+        <form>
+            <table>
+                <tr> <th colspan=4>
+                    <input TYPE="TEXT" NAME="num" value="" size=10> </th>
+                </tr>
+                <tr>
+                    <td> <input TYPE="BUTTON" NAME="sete" value=" 7 " size=10 onClick="guarda('7')"> </td>
+                    <td> <input TYPE="BUTTON" NAME="oito" value=" 8 " size=10 onClick="guarda('8')"> </td>
+                    <td> <input TYPE="BUTTON" NAME="nove" value=" 9 " size=10 onClick="guarda('9')"> </td>
+                    <td> <input TYPE="BUTTON" NAME="mult" value=" * " size=10 onClick="guarda('*')"> </td>
+                </tr>
+                <tr>
+                    <td> <input TYPE="BUTTON" NAME="quat" value=" 4 " size=10 onClick="guarda('4')"> </td>
+                    <td> <input TYPE="BUTTON" NAME="cinc" value=" 5 " size=10 onClick="guarda('5')"> </td>
+                    <td> <input TYPE="BUTTON" NAME="seis" value=" 6 " size=10 onClick="guarda('6')"> </td>
+                    <td> <input TYPE="BUTTON" NAME="divi" value=" / " size=10 onClick="guarda('/')"> </td>
+                </tr>
+                <tr>
+                    <td> <input TYPE="BUTTON" NAME="hum" value=" 1 " size=10 onClick="guarda('1')"> </td>
+                    <td> <input TYPE="BUTTON" NAME="dois" value=" 2 " size=10 onClick="guarda('2')"> </td>
+                    <td> <input TYPE="BUTTON" NAME="tres" value=" 3 " size=10 onClick="guarda('3')"> </td>
+                    <td> <input TYPE="BUTTON" NAME="adic" value=" + " size=10 onClick="guarda('+')"> </td>
+                </tr>
+                <tr>
+                    <td> <input TYPE="BUTTON" NAME="noth" value="   " size=10 onClick="Limpar()"> </td>
+                    <td> <input TYPE="BUTTON" NAME="zero" value=" 0 " size=10 onClick="guarda(0)"> </td>
+                    <td> <input TYPE="BUTTON" NAME="igul" value=" = " size=10 onClick="MostraResultado()"> </td>
+                    <td> <input TYPE="BUTTON" NAME="subt" value=" - " size=10 onClick="guarda('-')"> </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

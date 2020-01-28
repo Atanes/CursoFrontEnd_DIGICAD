@@ -1,0 +1,125 @@
+[cc lang=”css”]*{
+padding: 0;
+margin:0;
+}[/cc]
+
+@font-face {
+	font-family: "RegencyScriptFLF Regular";
+	src: url("http://site/fontes/RegencyScriptFLF-Regular.eot"); /* para IE */
+	src: local("RegencyScriptFLF-Regular"), url("http://site/fontes/RegencyScriptFLF-Regular.ttf") format("opentype");
+}
+
+body {
+    width: 100%;
+    font-family: "RegencyScriptFLF Regular", Cursive;
+    font: 15px;
+    font-size: 15px;
+    background-color: azure;
+}
+
+hr {
+    clear: both;
+    border-color: aquamarine;
+    line-height:2px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+thead {
+    background-color: deepskyblue;
+}
+
+tbody tr:nth-child(odd){
+   background-color: #E9E9E9;
+}
+
+ul, ol {
+    margin-left: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#container {
+   width: 800px;
+   margin: 0 auto;
+}
+
+#tabela_ingredientes {
+    width: 90%;
+    margin-left: 5%;
+}
+
+.cabecalho {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    height: 150px;
+}
+
+.cabecalho img {
+    float: left;
+    margin-top: 0px;
+    margin-left: 5px;
+    width: 150px;
+}
+
+.cabecalho h1 {
+    position: relative;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.rodape {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.rodape img {
+    float: left;
+    margin-top: 0px;
+    margin-left: 5px;
+    width: 50px;
+}
+
+.rodape p {
+    position: relative;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.topo_receitas {
+    position: relative;
+    text-align: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.topo_receitas img { 
+    width: 200px;
+    border-radius: 20%;
+}
+
+.topo_receitas_posicao_icone {
+  position: absolute;
+  top: 5px;
+  left: 0;
+}
+
+.topo_receitas_posicao_icone img {
+  width: 50px;
+}
+
+.img_ingredientes {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 120px;
+}
+.img_preparo {
+    margin-top: 20px;
+    width: 70px;
+}
+.centralizar {
+    text-align: center;
+}

@@ -1,0 +1,32 @@
+<html>
+
+<head>
+	<script language="JavaScript">
+		function AbrirJanela() {
+			window.open("BarraRolante.html", "My_Home_Page", "width=300,height=200");
+			document.open();
+			Hoje = new Date(99, 11, 08);
+			document.writeln(Hoje);
+			document.writeln(Hoje.toGMTString());
+			document.writeln(Hoje.toLocaleString());
+			document.writeln(navigator.appCodeName);
+			document.writeln(navigator.appName);
+			document.writeln(navigator.appVersion);
+			document.writeln(navigator.appCodeName.sub());
+			document.writeln(navigator.appName.sup());
+			document.writeln(navigator.appVersion.strike());
+			alert(document.cookie.length);
+			document.close();
+		}
+		txtvar = "My Home Page";
+		alert(txtvar.indexOf(" "));
+		alert(txtvar.lastIndexOf(" ", 6));
+	</script>
+</head>
+
+<body>
+	<a href="JavaScript:AbrirJanela()"><img src="Imagens/Castelo3.jpg"></a>
+
+</body>
+
+</html>
