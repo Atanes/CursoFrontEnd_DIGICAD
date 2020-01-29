@@ -36,6 +36,11 @@ kkk
 			setIdade(idade) {
 				this.idade = idade;
 			}
+
+			imprime(){
+				return "<br>Aluno: " + this.getNome() + "<br>Matricula: " + this.getMatricula()
+				+ "<br>Idade: " + this.getIdade();
+			}
 		}
 
 		function LimpaCampos() {
@@ -50,13 +55,14 @@ kkk
 			aluno.setIdade(document.getElementById("idade").value);
 			numero.unshift(aluno);
 			LimpaCampos();
-			document.getElementById("Registros").innerHTML = "Quantidade de registros realizados: " + ++registros;
+			document.getElementById("qtd_registros").innerHTML = "Quantidade de registros realizados: " + ++registros;
 		}
 
 		function Mostrar() {
 			for (var i = 0; i < numero.length; i++) {
 				if (numero[i] != null) {
 					console.log(numero[i].getNome());
+					document.getElementById("registros").innerHTML += numero[i].imprime();
 				}
 
 			}
@@ -79,7 +85,8 @@ kkk
 		<input type="Button" name="cadastrar" value="Cadastrar" onclick="Cadastrar()">
 		<input type="Button" name="mostrar" value="Mostrar" onclick="Mostrar()">
 	</form>
-	<p id="Registros"></p>
+	<div id="registros"></div>
+	<p id="qtd_registros"></p>
 
 
 </body>
