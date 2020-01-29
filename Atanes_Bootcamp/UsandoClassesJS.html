@@ -8,34 +8,34 @@ kkk
 	<script>
 		var numero = new Array(5);
 		var registros = 0;
-		function Aluno() {
-			var nome;
-			var matricula;
-			var idade;
+		class Aluno {
+			nome;
+			matricula;
+			idade;
 
-			this.getNome = function () {
-				return nome;
-			};
+			getNome() {
+				return this.nome;
+			}
 
-			this.setNome = function (value) {
-				nome = value;
-			};
+			setNome(nome) {
+				this.nome = nome;
+			}
 
-			this.getMatricula = function () {
-				return matricula;
-			};
+			getMatricula() {
+				return this.matricula;
+			}
 
-			this.setMatricula = function (value) {
-				matricula = value;
-			};
+			setMatricula(matricula) {
+				this.matricula = matricula;
+			}
 
-			this.getIdade = function () {
-				return idade;
-			};
+			getIdade() {
+				return this.idade;
+			}
 
-			this.setIdade = function (value) {
-				idade = value;
-			};
+			setIdade(idade) {
+				this.idade = idade;
+			}
 		}
 
 		function LimpaCampos() {
