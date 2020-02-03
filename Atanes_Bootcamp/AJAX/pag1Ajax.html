@@ -7,7 +7,7 @@
 
         <h1>The XMLHttpRequest Object</h1>
 
-        <button type="button" onclick="loadDoc('https://github.com/Atanes/CursoFrontEnd_DIGICAD/blob/master/Atanes_Bootcamp/AJAX/textoAjax.txt', myFunction)">Change Content
+        <button type="button" onclick="loadDoc('/ajax/textoAjax.html', myFunction)">Change Content
         </button>
     </div>
 
@@ -24,7 +24,7 @@
             xhttp.send();
         }
         function myFunction(xhttp) {
-            document.getElementById("demo").innerHTML =
+            document.getElementById("demo").innerHTML +=
                 xhttp.responseText;
         }
     </script>
