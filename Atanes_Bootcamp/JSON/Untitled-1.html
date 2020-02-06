@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<script>        
+		var cd_s = function (titulo, artista, ano){
+				
+			this.titulo = titulo;
+			this.artista = artista;
+			this.ano = ano;
+			
+			getTitulo(){
+				return this.titulo;
+			}
+			
+		}
+        function leArquivo() {
+            var xmlhttp = new XMLHttpRequest();
+
+            xmlhttp.open("GET", "cd_catalog.xml", true);
+            xmlhttp.send();
+
+            xmlhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    
+                    montaPagina(xmlhttp.responseXML);
+
+                    parse(xmlhttp.responseXML);
+                }
+            };
+        }
+        
+        function montaPagina(xmlDoc){
+        	
+        	var Listafinal = [];
+        	var cd = [];
+        	
+        	for (i = 0; i < xmlDoc.getElementsByTagName("CD").length; i++) {
+        		t = xmlDoc.getElementsByTagName("TITLE")[i].childNodes[0].nodeValue;
+        		a = xmlDoc.getElementsByTagName("ARTIST")[i].childNodes[0].nodeValue;
+        		ano = xmlDoc.getElementsByTagName("YEAR")[i].childNodes[0].nodeValue;
+        		
+        		Listafinal = Listafinal.concat(new cd_s(t,a,ano));
+    		}
+			for (x = 0; x < xmlDoc.getElementsByTagName("CD").length; x++) {
+        		
+				document.getElementById("listaXML").innerHTML += Listafinal[x] + "<br>";
+    		}
+        	
+        	Listafinal.sort(comparaTitulo);
+        	
+			for (y = 0; y < xmlDoc.getElementsByTagName("CD").length; y++) {
+        		
+				document.getElementById("Titulo").innerHTML += Listafinal[y] + "<br>";
+    		}
+        	
+        }
+        // compare function for sorting
+        function comparaTitulo(a, b) {
+            if (a.getTitulo() < b.getTitulo())
+                return -1;
+            if (a.getTitulo() > b.getTitulo())
+                return 1;
+            return 0;
+        }
+
+        function parse(node) {
+            if (node.nodeType != 1) console.log('NULL');
+            var result = { name: node.nodeName };
+            var children = [];
+            for (var i = 0; i < node.childNodes.length; i++) {
+                var child = parse(node.childNodes[i]);
+                if (child) {
+                    children.push(child);
+                }
+            }
+
+            // sort children
+            children.sort(compare);
+
+            // store them
+            result.children = children;
+
+            console.log(result.children.child);
+        }
+
+        // needs to be updated
+        function generate(node) {
+            if (node.nodeType != 1) return "";
+            var html = "<li>" + node.nodeName;
+            var htmlForChildNodes = "";
+            for (var i = 0; i < node.childNodes.length; i++) {
+                htmlForChildNodes += generate(node.childNodes[i]);
+            }
+            if (htmlForChildNodes) {
+                html += "<ul>" + htmlForChildNodes + "</ul>";
+            }
+            html += "</li>";
+            document.getElementById("listaXML").innerText = html;
+        }
+
+    </script>
+</head>
+
+<body onload="leArquivo()">
+	<h1>Teste de ordenação de arquivo XML</h1>
+	<div id="listaXML"></div>
+	<div id="Titulo"></div>
+	<div id="Artista"></div>
+	<div id="Ano"></div>
+</body>
+
+</html>
