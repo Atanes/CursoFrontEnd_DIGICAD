@@ -2,164 +2,178 @@
 <html>
 
 <head>
-<script>
-var Listafinal = [];
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<script>
+		var Listafinal = [];
 
-class CD {
-	titulo;
-	artista;
-	ano;
+		class CD {
+			titulo;
+			artista;
+			ano;
 
-	getTitulo() {
-		return this.titulo;
-	}
+			getTitulo() {
+				return this.titulo;
+			}
 
-	setTitulo(t) {
-		this.titulo = t;
-	}
+			setTitulo(t) {
+				this.titulo = t;
+			}
 
-	getArtista() {
-		return this.artista;
-	}
+			getArtista() {
+				return this.artista;
+			}
 
-	setArtista(artista) {
-		this.artista = artista;
-	}
+			setArtista(artista) {
+				this.artista = artista;
+			}
 
-	getAno() {
-		return this.ano;
-	}
+			getAno() {
+				return this.ano;
+			}
 
-	setAno(ano) {
-		this.ano = ano;
-	}
+			setAno(ano) {
+				this.ano = ano;
+			}
 
-	imprime(){
-		return "<br>Aluno: " + this.getNome() + "<br>Matricula: " + this.getMatricula()
-		+ "<br>Idade: " + this.getIdade();
-	}
-}
-        function leArquivo() {
-            var xmlhttp = new XMLHttpRequest();
+			imprime() {
+				return "<br>Aluno: " + this.getNome() + "<br>Matricula: " + this.getMatricula()
+					+ "<br>Idade: " + this.getIdade();
+			}
+		}
+		function leArquivo() {
+			var xmlhttp = new XMLHttpRequest();
 
-            xmlhttp.open("GET", "cd_catalog.xml", true);
-            xmlhttp.send();
+			xmlhttp.open("GET", "cd_catalog.xml", true);
+			xmlhttp.send();
 
-            xmlhttp.onreadystatechange = function () {
-                if (this.readyState == 4 && this.status == 200) {
-                    
-                    montaPagina(xmlhttp.responseXML);
+			xmlhttp.onreadystatechange = function () {
+				if (this.readyState == 4 && this.status == 200) {
 
-                    //parse(xmlhttp.responseXML);
-                }
-            };
-        }
-        
-        function montaPagina(xmlDoc){
-        	
-        	
-        	for (i = 0; i < xmlDoc.getElementsByTagName("CD").length; i++) {
-        		cd = new CD();
-        		t = xmlDoc.getElementsByTagName("TITLE")[i].childNodes[0].nodeValue;
-        		a = xmlDoc.getElementsByTagName("ARTIST")[i].childNodes[0].nodeValue;
-        		ano = xmlDoc.getElementsByTagName("YEAR")[i].childNodes[0].nodeValue;
-        		cd.setArtista(a);
-        		cd.setTitulo(t);
-        		cd.setAno(ano);
-        		Listafinal.push(cd);
-    		}
-        	
-        	Listafinal.forEach(function(item) {
-        		document.getElementById("listaXML").innerHTML += "Titulo: " + item.getTitulo() 
-        			+ "Artista: " + item.getArtista() + "Ano: " + item.getAno() +"<br>";
-        	});
-        	
-        	Listafinal.sort(comparaTitulo);
-        	
-        	Listafinal.forEach(function(item) {
-        		document.getElementById("Titulo").innerHTML += "Titulo: " + item.getTitulo() 
-    			+ "Artista: " + item.getArtista() + "Ano: " + item.getAno() +"<br>";;
-        	});
-        	
-			Listafinal.sort(comparaArtista);
-        	
-        	Listafinal.forEach(function(item) {
-        		document.getElementById("Artista").innerHTML += "Titulo: " + item.getTitulo() 
-    			+ "Artista: " + item.getArtista() + "Ano: " + item.getAno() +"<br>";;
-        	});
-        	
-			Listafinal.sort(comparaAno);
+					montaPagina(xmlhttp.responseXML);
+
+					//parse(xmlhttp.responseXML);
+				}
+			};
+		}
+
+		function montaPagina(xmlDoc) {
+
 			
-        	Listafinal.forEach(function(item) {
-        		var texto = "";
-        		texto += "<tr><td>" + item.getTitulo() +"</td>" + 
-    			+ "<td>" + item.getArtista() + "</td>" 
-    			+ "<td>" + item.getAno() + "</td></tr>";
-    			
-    			addRow(texto);
-        	});
-        	
-        }
-        // Compara os items da lista pelo Titulo
-        function comparaTitulo(a, b) {
-            if (a.getTitulo() < b.getTitulo())
-                return -1;
-            if (a.getTitulo() > b.getTitulo())
-                return 1;
-            return 0;
-        }
-        
-     // Compara os items da lista pelo Artista
-        function comparaArtista(a, b) {
-            if (a.getArtista() < b.getArtista())
-                return -1;
-            if (a.getArtista() > b.getArtista())
-                return 1;
-            return 0;
-        }
-     
-     // Compara os items da lista pelo Ano
-        function comparaAno(a, b) {
-            if (a.getAno() < b.getAno())
-                return -1;
-            if (a.getAno() > b.getAno())
-                return 1;
-            return 0;
-        }
-     
-        function addRow(texto) {
-            var table = document.getElementById("cds");
-            var row = table.getElementsByTagName('tr');
-            for (i=0; i<row.length; i++) {
-                row[i].innerHTML = row[i].innerHTML + texto;
-            }
-        }
+			for (i = 0; i < xmlDoc.getElementsByTagName("CD").length; i++) {
+				cd = new CD();
+				t = xmlDoc.getElementsByTagName("TITLE")[i].childNodes[0].nodeValue;
+				a = xmlDoc.getElementsByTagName("ARTIST")[i].childNodes[0].nodeValue;
+				ano = xmlDoc.getElementsByTagName("YEAR")[i].childNodes[0].nodeValue;
+				cd.setArtista(a);
+				cd.setTitulo(t);
+				cd.setAno(ano);
+				Listafinal.push(cd);
+				alert(Listafinal[i].getArtista());
+			}
+
+			semOrdenacao(Listafinal);
+			ordenaTitulo(Listafinal);
+			ordenaArtista(Listafinal);
+			ordenaAno(Listafinal);
+
+		}
+		// Compara os items da lista pelo Titulo
+		function comparaTitulo(a, b) {
+			if (a.getTitulo() < b.getTitulo())
+				return -1;
+			if (a.getTitulo() > b.getTitulo())
+				return 1;
+			return 0;
+		}
+
+		// Compara os items da lista pelo Artista
+		function comparaArtista(a, b) {
+			if (a.getArtista() < b.getArtista())
+				return -1;
+			if (a.getArtista() > b.getArtista())
+				return 1;
+			return 0;
+		}
+
+		// Compara os items da lista pelo Ano
+		function comparaAno(a, b) {
+			if (a.getAno() < b.getAno())
+				return -1;
+			if (a.getAno() > b.getAno())
+				return 1;
+			return 0;
+		}
+
+		function semOrdenacao(vetorCds) {
+			var texto = "<table><tr><th>Titulo</th><th>Artista</th><th>Ano</th></tr>";
+
+			vetorCds.forEach(function (item) {
+				texto += "<tr><td>" + item.getTitulo() + "</td>"
+					+ "<td>" + item.getArtista() + "</td>"
+					+ "<td>" + item.getAno() + "</td></tr>";
+			});
+			texto += "</table>";
+
+			document.getElementById("tabelaCDs").innerHTML = texto;
+		}
+
+		function ordenaTitulo(vetorCds) {
+			var texto = "<table><tr><th>Titulo</th><th>Artista</th><th>Ano</th></tr>";
+			vetorCds.sort(comparaTitulo);
+
+			vetorCds.forEach(function (item) {
+				texto += "<tr><td>" + item.getTitulo() + "</td>"
+					+ "<td>" + item.getArtista() + "</td>"
+					+ "<td>" + item.getAno() + "</td></tr>";
+			});
+			texto += "</table>";
+
+			document.getElementById("Titulo").innerHTML = texto;
+		}
+
+		function ordenaArtista(vetorCds) {
+			var texto = "<table><tr><th>Titulo</th><th>Artista</th><th>Ano</th></tr>";
+			vetorCds.sort(comparaArtista);
+
+			vetorCds.forEach(function (item) {
+				texto += "<tr><td>" + item.getTitulo() + "</td>"
+					+ "<td>" + item.getArtista() + "</td>"
+					+ "<td>" + item.getAno() + "</td></tr>";
+			});
+			texto += "</table>";
+
+			document.getElementById("Artista").innerHTML = texto;
+		}
+
+		function ordenaAno(vetorCds) {
+			var texto = "<table><tr><th>Titulo</th><th>Artista</th><th>Ano</th></tr>";
+			vetorCds.sort(comparaAno);
+
+			vetorCds.forEach(function (item) {
+				texto += "<tr><td>" + item.getTitulo() + "</td>"
+					+ "<td>" + item.getArtista() + "</td>"
+					+ "<td>" + item.getAno() + "</td></tr>";
+			});
+			texto += "</table>";
+
+			document.getElementById("Ano").innerHTML = texto;
+		}
 
 
-    </script>
+
+	</script>
 </head>
 
 <body onload="leArquivo()">
-	<h1>Teste de ordenação de arquivo XML</h1>
-
-	<table>
-		<tbody id="cds">
-			<tr>
-				<th>Titulo</th>
-				<th>Artista</th>
-				<th>Ano</th>
-			</tr>
-		</tbody>
-	</table>
-	<h3>Sem Ordenação</h3>
-	<div id="listaXML"></div>
+	<h1>Teste de ordenaÃ§Ã£o de arquivo XML</h1>
+	<h3>Sem OrdenaÃ§Ã£o</h3>
+	<div id="tabelaCDs"></div>
 	<hr>
 	<h3>Ordenado por Titulo</h3>
 	<div id="Titulo"></div>
 	<hr>
 	<h3>Ordenado por Artista</h3>
 	<div id="Artista"></div>
-	<hr>
 	<h3>Ordenado por Ano</h3>
 	<div id="Ano"></div>
 </body>
