@@ -1,0 +1,14 @@
+#title-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#title-body h1{
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+}
+
+#title-body img{
+    width: 45px;
+}

@@ -1,0 +1,37 @@
+.lista-sumario { 
+    max-width: 700px; 
+    margin: 20px auto 0; 
+    padding: 0 20px; 
+} 
+
+.lista-sumario h1 { 
+    text-align: center; 
+}
+.lista-sumario h3 { 
+    margin-top:10px; 
+    color:red; 
+} 
+
+.lista-sumario article{ 
+    background: #fff; 
+    border: 1px solid #ddd; 
+    border-radius: 5px; 
+    padding: 20px; 
+    margin-bottom: 20px; 
+}
+
+.lista-sumario article img{
+    border: 1px solid silver; 
+    box-shadow: 3px 3px #888888; 
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto; 
+} 
+
+.lista-sumario article p{ 
+    font-size: 16px; 
+    color: #999; 
+    margin-top: 5px; 
+    line-height:24px; 
+    text-align:justify; 
+}
