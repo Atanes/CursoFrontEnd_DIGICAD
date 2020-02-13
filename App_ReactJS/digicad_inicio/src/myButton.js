@@ -1,9 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 class Botao extends React.Component {
   render() {
-    return <button>Botão {this.props.id}</button>;
+    return <button className="btn btn-primary mb-2" type={this.props.tipo}>{this.props.texto}</button>;
   }
 }
 

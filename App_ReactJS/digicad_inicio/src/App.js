@@ -1,18 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Botao from './myButton';
-import Texto from './myText';
+import FormEnd from "./formEndereco";
+
 
 
 class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Botao id="1"/>
-        <Texto nome="Atanes"/>
-        <Botao id="2"/>
-        <Texto nome="Alexandre"/>
+        <FormEnd />
       </div>
     );
   }

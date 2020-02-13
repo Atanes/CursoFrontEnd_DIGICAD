@@ -1,0 +1,90 @@
+<html>
+
+<head>
+    <title>ViaCEP Webservice</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="../bootstrap-4.4.1-dist/css/bootstrap.min.css">
+
+    <!-- Adicionando Javascript -->
+    <script type="text/javascript">
+
+        function limpa_formulário_cep() {
+            document.getElementById('rua').value = "";
+            document.getElementById('complemento').value = "";
+            document.getElementById('bairro').value = "";
+            document.getElementById('cidade').value = "";
+            document.getElementById('estado').value = "";
+        }
+
+        function atribuirCampos(data) {
+            
+            document.getElementById('rua').value = data.logradouro;
+            document.getElementById('complemento').value = data.complemento;
+            document.getElementById('bairro').value = data.bairro;
+            document.getElementById('cidade').value = data.localidade;
+            document.getElementById('estado').value = data.uf;
+
+        }
+
+        function pesquisacep() {
+
+            const btnPesquisarCEP = document.querySelector("#btnPesquisar");
+            btnPesquisarCEP.addEventListener("click", event => {
+                event.PreventDefault();
+            });
+            alert('passou');
+            const inputDoCep = document.querySelector("#cep");
+            const valorDoCep = inputDoCep.value;
+            alert(valorDoCep);
+            const url = `https://viacep.com.br/ws/${valorDoCep}/json/`;
+            alert(url);
+            fetch(url).then(response => {
+                return response.json();
+            })
+                .then(data => {
+                    atribuirCampos(data);
+                })
+                .catch(function (error) {
+                    console.log('There has been a problem with your fetch operation: ' + error.message);
+                });
+            alert('fim');
+        }
+
+    </script>
+</head>
+
+<body>
+    <div class="container col-5">
+        <form>
+            <div class="form-group font-weight-bold">
+                <label>CEP</label>
+                <input type="text" id="cep" pattern="\d{5}-?\d{3}" class="form-control" required
+                    placeholder="Insira o seu CEP">
+            </div>
+            <div class="form-group font-weight-bold">
+                <label>Rua</label>
+                <input type="text" class="form-control" id="rua" placeholder="...">
+            </div>
+            <div class="form-group font-weight-bold">
+                <label>Complemento</label>
+                <input type="text" class="form-control" id="complemento" placeholder="...">
+            </div>
+            <div class="form-group font-weight-bold">
+                <label>Bairro</label>
+                <input type="text" class="form-control" id="bairro" placeholder="...">
+            </div>
+            <div class="form-group font-weight-bold">
+                <label>Cidade</label>
+                <input type="text" class="form-control" id="cidade" placeholder="...">
+            </div>
+            <div class="form-group font-weight-bold">
+                <label>Estado</label>
+                <input type="text" class="form-control" id="estado" placeholder="...">
+            </div>
+            <button type="button" id="btnPesquisar" class="btn btn-primary" onclick="pesquisacep()">Pesquisa</button>
+            <button type="button" id="btnLimpar" class="btn btn-danger" onclick="limpa_formulário_cep()">Limpar</button>
+        </form>
+    </div>
+</body>
+
+</html>
