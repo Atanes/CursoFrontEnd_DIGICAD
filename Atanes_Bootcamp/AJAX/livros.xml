@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LivroLista>
+<Livro>
+<Titulo>O Alquimista</Titulo>
+<Autor>Paulo Coelho</Autor>
+<Genero>Ficcao</Genero>
+</Livro>
+<Livro>
+<Titulo>A moreninha</Titulo>
+<Autor>Machado de Assis</Autor>
+<Genero>Romance</Genero>
+</Livro>
+<Livro>
+<Titulo>David Copperfield</Titulo>
+<Autor>Charles Dickens</Autor>
+<Genero>Classico</Genero>
+</Livro>
+<Livro>
+<Titulo>Sidarta</Titulo>
+<Autor>Herman Hesse</Autor>
+<Genero>Ficcao</Genero>
+</Livro>
+<Livro>
+<Titulo>ADO Banco de dados na web</Titulo>
+<Autor>Jose Carlos Macoratti</Autor>
+<Genero>Informatica</Genero>
+</Livro>
+</LivroLista>

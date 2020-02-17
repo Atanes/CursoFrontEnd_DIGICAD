@@ -1,0 +1,59 @@
+<HTML>
+
+<HEAD>
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="../js/script.js"></script>
+    <TITLE> ::: XMLHttpRequest ::: </TITLE>
+
+    <style type="text/css">
+        .classecss {
+            background-color: #ff8800;
+            font-weight: bold;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function () {
+            $("a").mouseover(function (event) {
+                $("#camada").addClass("classecss");
+            });
+            $("a").mouseout(function (event) {
+                $("#camada").removeClass("classecss");
+            });
+        });
+    </script>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000">
+    <h1 id="cabecalho">JQuey, alguns exemplos de uso</h1>
+
+    <p class="error">Inicialmente Oculto e depois revelado.</p>
+    <p>Este está visível</p>
+
+    <ul>
+        <li>Apple</li>
+        <li>Amazon</li>
+        <li>Google</li>
+        <li>Microsoft</li>
+    </ul>
+
+    <div id="camada">
+        Esta camada é independente e vou adicionar e eliminar classes css sobre ela
+    </div>
+
+    <script>
+        $("p.error").hide().show("slow");
+
+        $("#cabecalho").click(function (event) {
+            alert("Você clicou no cabeçalho!");
+        });
+
+        $("li").hide().parent().before("<a href='#''>Mostrar Empresas Gigantes</a>");
+        $("a").click(function () {
+            $("li").show();
+        });
+    </script>
+
+</BODY>
+
+</HTML>

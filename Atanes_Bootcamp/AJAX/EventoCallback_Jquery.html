@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Funções de CallBack JQuery</title>
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+
+            $("#mudaPosicao").click(function (event) {
+                event.preventDefault();
+                $("#info").fadeOut(1000, function () {
+                    $("#info").css({ 'top': 300, 'left': 200 });
+                    $("#info").fadeIn(1000);
+                });
+            });
+
+        });
+
+    </script>
+</head>
+
+<body>
+    <div id="info"
+        style="background-color: rgb(204, 119, 0); color: rgb(255, 255, 255); padding: 10px; width: 300px; height: 130px; position: absolute; top: 100px; left: 400px; display: block;">
+        <ul>
+            <li>Vou provar o callback</li>
+            <li>Para executar umas funções depois de outras</li>
+            <li>Que me serve, por exemplo, para encadenar efeitos</li>
+        </ul>
+    </div>
+    <br>
+    <br>
+    <a href="#" id="mudaPosicao">Fazer várias chamadas com callback</a>
+
+
+
+
+</body>
+
+</html>

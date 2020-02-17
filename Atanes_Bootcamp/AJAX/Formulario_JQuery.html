@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+
+<head>
+    <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+    <script>
+        var xml = '<employees><employee id="1000"><first_name>Yashwant</first_name><last_name>Chavan</last_name></employee><employee id="2000"><first_name>Mahesh</first_name><last_name>Divan</last_name></employee></employees>';
+
+        $(document).ready(function () {
+            $.ajax({
+                type: 'GET',
+                url: "/cd_catalog.xml",
+                dataType: 'xml',
+                success: function (xml) {
+                    $(xml).find('CD').each(function () {
+                        var nome = $(xml).find('TITLE').text();
+                        var url = $(xml).find('ARTIST').text();
+                        $('<p></p>').html(nome + '<br />' + url).appendTo('#wrap');
+                    });
+                }
+            });
+        });
+    </script>
+</HEAD>
+
+<body>
+    <div id="container"></div>
+</body>
+
+</html>
