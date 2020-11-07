@@ -4,7 +4,10 @@
 <head>
   <!-- Place your kit's code here -->
   <script src="https://kit.fontawesome.com/a30559e34e.js" crossorigin="anonymous"></script>
-  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <script src="https://cdn.jsdelivr.net/gh/Atanes/Arquivos_Estaticos@master/js/jquery-3.4.1.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/Atanes/Arquivos_Estaticos@master/js/jquery.mask.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/Atanes/Arquivos_Estaticos@master/js/mascaras.js"></script>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
   <style>
     body {
       font-family: Arial, Helvetica, sans-serif;
@@ -58,21 +61,37 @@
 </head>
 
 <body>
-  <form action="pagina2.html" style="max-width:500px;margin:auto"> <!--method="POST"-->
+  <form action="pagina2.html" style="max-width:500px;margin:auto">
+    <!--method="POST"-->
     <h2>Formulário de cadastro</h2>
     <div class="input-container">
       <i class="fa fa-user icon"></i>
-      <input class="input-field" type="text" placeholder="nome de usuário" name="usrnm">
+      <input class="input-field" type="text" placeholder="nome de usuário" name="usrnm" />
+    </div>
+
+    <div class="input-container">
+      <i class="fas fa-phone icon"></i>
+      <input class="input-field fone" type="text" placeholder="(11) 1111-1111" name="fone" />
+    </div>
+
+    <div class="input-container">
+      <i class="fas fa-id-card icon"></i>
+      <input class="input-field cpf" type="text" name="cpf" />
+    </div>
+
+    <div class="input-container">
+      <i class="fas fa-car icon"></i>
+      <input class="input-field placaCarro" type="text" name="placa" />
     </div>
 
     <div class="input-container">
       <i class="fa fa-envelope icon"></i>
-      <input class="input-field" type="text" placeholder="Email" name="email">
+      <input class="input-field" type="text" placeholder="Email" name="email" />
     </div>
 
     <div class="input-container">
       <i class="fa fa-key icon"></i>
-      <input class="input-field" type="password" placeholder="senha" name="psw">
+      <input class="input-field" type="password" placeholder="senha" name="psw" />
     </div>
 
     <button type="submit" class="btn">Cadastrar</button>

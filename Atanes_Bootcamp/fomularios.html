@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Formulários HTML</title>
+    </head>
+
+    <body>
+        <form action="index.html" method="POST">
+            <fieldset>
+                <legend>Dados pessoais</legend>
+                <div>
+                    <label for="nome">Nome:</label>
+                    <input type="text" name="nome" id="">
+                </div>
+                <div>
+                    <label for="email">E-mail:</label>
+                    <input type="email" name="email" id="">
+                </div>
+                <div>
+                    <label for="dtnasc">Data Nascimento:</label>
+                    <input type="date" name="dtnasc" id="">
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Tipo de contato</legend>
+                <div>
+                    <label for="tipocontato">Tipo de contato:</label>
+                    <select name="" id="">
+                        <option value="reclamacao">Reclamação</option>
+                        <option value="elogio">Elogio</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea name="mensagem" id="" cols="30" rows="10"></textarea>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Outras informações</legend>
+                <p>Como você nos conheceu?</p>
+                <label for="internet">
+                   <input type="radio" name="canal" id="internet"> 
+                   Internet
+                </label>
+                <label for="televisao">
+                    <input type="radio" name="canal" id="televisao"> 
+                    Televisão
+                 </label>
+                 <label for="radio">
+                    <input type="radio" name="canal" id="radio"> 
+                    Radio
+                 </label>
+                 <p>Como gostaria de receber nosso retorno?</p>
+                 <label for="">E-mail</label>
+                 <input type="checkbox" name="" id="c_email" value="email">
+                 <label for="">WhatsApp</label>
+                 <input type="checkbox" name="" id="c_whatsapp" value="whatsapp">
+                 <label for="">SMS</label>
+                 <input type="checkbox" name="" id="c_sms" value="sms">
+            </fieldset>
+            <input type="submit" value="Enviar">
+        </form>
+        <footer>
+            <p>Autor: Alexandre Atanes de Jesus <strong>&copy;</strong></p>
+        </footer>
+    </body>
+
+</html>
