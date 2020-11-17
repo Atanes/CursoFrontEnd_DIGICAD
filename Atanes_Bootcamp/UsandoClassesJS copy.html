@@ -7,10 +7,18 @@
 		<script>
 			var numero = new Array();
 			class Aluno {
+				id;
 				nome;
 				matricula;
 				idade;
 
+				getId() {
+					return this.id;
+				}
+
+				setId(id) {
+					this.id = id;
+				}
 				getNome() {
 					return this.nome;
 				}
@@ -36,8 +44,8 @@
 				}
 
 				imprime() {
-					return "<br>Aluno: " + this.getNome() + "<br>Matricula: " + this.getMatricula()
-						+ "<br>Idade: " + this.getIdade();
+					return "<tr><th>" + this.getId() + "</th><td>" + this.getNome() + "</td><td>"
+						+ this.getMatricula() + "</td><td>" + this.getIdade() + "</td></tr>";
 				}
 			}
 
@@ -51,19 +59,26 @@
 				aluno.setNome(document.getElementById("nome").value);
 				aluno.setMatricula(document.getElementById("matricula").value);
 				aluno.setIdade(document.getElementById("idade").value);
+				aluno.setId(numero.length + 1);
 				numero.unshift(aluno);
 				LimpaCampos();
 				document.getElementById("qtd_registros").innerHTML = "Quantidade de registros realizados: " + numero.length;
 			}
 
 			function Mostrar() {
+				var myHtmlContent = '';
+				var tableRef = document.getElementById('myTable').getElementsByTagName('tbody')[0];
+				var newRow = tableRef.insertRow(tableRef.rows.length);
+
 				for (var i = 0; i < numero.length; i++) {
 					if (numero[i] != null) {
-						document.getElementById("registros").innerHTML += numero[i].imprime();
+						myHtmlContent = numero[i].imprime();
+						newRow = tableRef.insertRow(tableRef.rows.length);
+						newRow.innerHTML = myHtmlContent;
 					}
 
 				}
-
+				document.getElementById('myTable').hidden = false;
 			}	 
 		</script>
 
@@ -82,6 +97,19 @@
 		</form>
 		<div id="registros"></div>
 		<p id="qtd_registros"></p>
+		<table class="table table-striped" hidden id="myTable">
+			<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">Nome</th>
+					<th scope="col">Matricula</th>
+					<th scope="col">Idade</th>
+				</tr>
+			</thead>
+			<tbody>
+
+			</tbody>
+		</table>
 
 
 	</body>

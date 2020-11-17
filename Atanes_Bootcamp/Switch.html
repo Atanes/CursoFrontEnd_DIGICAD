@@ -3,7 +3,9 @@
 <head>
 	<title>Teste</title>
 	<meta charset="utf-8">
+	<link rel="stylesheet" href="css/style.css">
 	<script>
+		var texto = window.prompt("Começando o exercicio........");
 		var cor = parseInt(window.prompt("Qual é o sua cor favorita? 1-Amarelo 2-Azul 3-Preto 4-Rosa 5-Vermelho"));
 
 		function isNumber(numero) {
@@ -42,8 +44,10 @@
 	</script>
 </head>
 
-<body onload="alert(isNumber('12.098+03'))">
+<body>
+	<div class="textoFormatado" id="textoInicial"></div>
 	<script>
+		document.getElementById('textoInicial').innerHTML = texto;
 		switch (cor) {
 			case 1: document.bgColor = "yellow";
 				break;
@@ -56,9 +60,6 @@
 			case 5: document.bgColor = "red";
 				break;
 		}
-
-		alert(ChangeChar('computador'));
-
 	</script>
 </body>
 

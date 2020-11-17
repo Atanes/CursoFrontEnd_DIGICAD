@@ -13,20 +13,20 @@
     </head>
 
     <body>
-        <table>
+        <table onmouseover="trocaCor()">
             <thead>
                 <tr>
-                    <th>Nome</th>
-                    <th>email</th>
+                    <th class="js-cor">Nome</th>
+                    <th class="js-cor">email</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td rowspan="2">Alexandre</td>
-                    <td>aatanes@gmail.com</td>
+                    <td rowspan="2" class="js-cor">Alexandre</td>
+                    <td class="js-cor">aatanes@gmail.com</td>
                 </tr>
                 <tr>
-                    <td>aatanes@hotmil.com</td>
+                    <td>aatanes@hotmail.com</td>
                 </tr>
                 <tr>
                     <td>Adriana</td>
@@ -47,6 +47,15 @@
                 </tr>
             </tfoot>
         </table>
+        <script>
+            function trocaCor(){
+                var trocaCor = document.getElementsByClassName('js-cor');
+                for(var i = 0;i<trocaCor.length;i++){
+                    trocaCor[i].style.color = "red";
+                }
+                
+            }
+        </script>
     </body>
 
 </html>

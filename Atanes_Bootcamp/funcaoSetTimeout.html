@@ -1,0 +1,29 @@
+<html>
+
+	<head>
+		<title>Introdu&ccedil;&atilde;o a JavaScript</title>
+	</head>
+
+	<body>
+		<input type="text" id="mostraNumeros">
+		<button onclick="mudaValor()">Inicia Contagem</button>
+		<script language="JavaScript">
+			var c = 0;
+			var t;
+
+			function mudaValor() {
+				document.getElementById("mostraNumeros").value += c;
+				c++;
+				
+				if(c >= 10){
+					clearTimeout(t);
+				}else {
+					document.getElementById("mostraNumeros").value += ', ';
+					t = setTimeout(mudaValor, 1000);
+				}
+			}
+
+		</script>
+	</body>
+
+</html>

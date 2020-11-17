@@ -1,27 +1,31 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 
 <html>
-<head>
-	<title>Exemplo de percurso de arrays com length</title>
-</head>
 
-<body>
+	<head>
+		<title>Exemplo de percurso de arrays com length</title>
+	</head>
 
-<script language="JavaScript">
+	<body>
 
-var miArray = new Array(2) 
+		<script language="JavaScript">
 
-miArray[0] = "Colombia" 
-miArray[1] = "Estados Unidos" 
+			var miArray = new Array();
 
-miArray[5] = "Brasil" 
+			miArray[0] = "Colombia";
+			miArray[1] = "Estados Unidos";
+			miArray[2] = "Uruguai";
 
-for (i=0;i<miArray.length;i++){ 
-document.write("Posição " + i + " do array: " + miArray[i]) 
-document.write("<br>") 
-}
+			miArray[5] = "Brasil";
+			miArray[6] = 'Chile';
 
-</script>
+			for (i = 0; i < miArray.length; i++) {
+				document.write("Posição " + i + " do array: " + miArray[i]);
+				document.write("<br>");
+			}
 
-</body>
+		</script>
+
+	</body>
+
 </html>

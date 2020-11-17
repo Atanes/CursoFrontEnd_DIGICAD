@@ -8,12 +8,12 @@
     </head>
 
     <body>
-        <form action="index.html" method="POST">
+        <form action="" method="POST">
             <fieldset>
                 <legend>Dados pessoais</legend>
                 <div>
                     <label for="nome">Nome:</label>
-                    <input type="text" name="nome" id="">
+                    <input type="text" name="nome" id="nome">
                 </div>
                 <div>
                     <label for="email">E-mail:</label>
@@ -62,10 +62,16 @@
                  <input type="checkbox" name="" id="c_sms" value="sms">
             </fieldset>
             <input type="submit" value="Enviar">
+            <button type="reset" onclick="foco()">Foco</button>
         </form>
         <footer>
             <p>Autor: Alexandre Atanes de Jesus <strong>&copy;</strong></p>
         </footer>
+        <script>
+            function foco(){
+                document.getElementById("nome").focus();
+            }
+        </script>
     </body>
 
 </html>

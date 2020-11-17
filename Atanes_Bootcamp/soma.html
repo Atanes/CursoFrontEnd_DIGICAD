@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <label for="" id="lblN1" onmouseover="mudaEstilo()" onmouseout="voltaEstilo()">Numero 1: </label>
+        <input type="text" id="n1">
+        <label for="" id="lblN2">Numero 2: </label>
+        <input type="text" id="n2">
+        <input type="button" value="Soma" onclick="mostraSoma()">
+
+        <div id="valorSoma"></div>
+
+        <script>
+            function mostraSoma() {
+                var n1 = document.getElementById("n1").value;
+                var n2 = document.getElementById("n2").value;
+                soma(n1, n2);
+            }
+
+            function soma(n1, n2) {
+                document.getElementById("valorSoma").innerHTML = '<h2>A soma dos valores é: ' + (Number(n1) + Number(n2)) + '</h2>';
+            }
+
+            function carregando() {
+                alert('Carregando a página!!');
+            }
+
+            function mudaEstilo(){
+                document.getElementById("lblN1").style.color = "red";
+                document.getElementById("lblN1").style.fontSize = "20px";
+                document.getElementById("lblN1").style.fontWeight = "bold";
+            }
+
+            function voltaEstilo(){
+                document.getElementById("lblN1").style.color = "black";
+                document.getElementById("lblN1").style.fontSize = "12px";
+                document.getElementById("lblN1").style.fontWeight = "normal";
+            }
+        </script>
+    </body>
+
+</html>

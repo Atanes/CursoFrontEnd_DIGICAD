@@ -1,0 +1,29 @@
+<html>
+
+	<head>
+		<script language="javascript">
+			var i = 0
+			var imgs = [];
+			imgs[0] = new Image;
+			imgs[0].src = "imagens/flags_02.jpeg";
+			imgs[1] = new Image;
+			imgs[1].src = "imagens/flags_03.jpeg";
+			imgs[2] = new Image;
+			imgs[2].src = "imagens/flags_04.jpeg";
+			imgs[3] = new Image;
+			imgs[3].src = "imagens/flags_01.jpeg";
+			function animate() {
+				document.getElementById('imagemBandeiras').src = imgs[i++].src
+				if (i == 4) i = 0;
+				setTimeout("animate()", 500);
+			}
+			
+		</script>
+	</head>
+
+	<body onload="animate()">
+		<img src="imagens/flags_01.jpeg" id="imagemBandeiras">
+		<img src="imagens/cachorro.jpg">
+	</body>
+
+</html>

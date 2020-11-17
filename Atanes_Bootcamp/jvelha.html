@@ -1,490 +1,490 @@
 <html>
 
-<head>
-  <meta name="GENERATOR" content="Microsoft FrontPage 3.0">
-  <title>JAVA Script - Jogo da Velha </title>
+  <head>
+    <meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+    <title>JAVA Script - Jogo da Velha </title>
 
 
-  <meta name="Microsoft Theme" content="none">
-  <meta name="Microsoft Border" content="none">
-</head>
+    <meta name="Microsoft Theme" content="none">
+    <meta name="Microsoft Border" content="none">
+  </head>
 
-<body tppabs="http://www.webgate.com.br/images/back.gif" bgcolor="#f5f5f5">
+  <body tppabs="http://www.webgate.com.br/images/back.gif" bgcolor="#f5f5f5">
 
-  <p>
-    <script name="JavaScript">
-      function variables() {
+    <p>
+      <script name="JavaScript">
+        function variables() {
 
-        t = 1;
+          t = 1;
 
-        change = 1;
+          change = 1;
 
-        empty1 = -1;
+          empty1 = -1;
 
-        empty2 = -1;
+          empty2 = -1;
 
-        empty3 = -1;
+          empty3 = -1;
 
-        empty4 = -1;
+          empty4 = -1;
 
-        empty5 = -1;
+          empty5 = -1;
 
-        empty6 = -1;
+          empty6 = -1;
 
-        empty7 = -1;
+          empty7 = -1;
 
-        empty8 = -1;
+          empty8 = -1;
 
-        empty9 = -1;
+          empty9 = -1;
 
-        return;
+          return;
 
-        whogoesnow = "Jogador 1"
-
-      }
-
-      function win() {
-
-        if (empty1 == empty2 && empty2 == empty3 && empty3 == 0 ||
-
-          empty4 == empty5 && empty5 == empty6 && empty6 == 0 ||
-
-          empty7 == empty8 && empty8 == empty9 && empty9 == 0 ||
-
-          empty1 == empty4 && empty4 == empty7 && empty7 == 0 ||
-
-          empty2 == empty5 && empty5 == empty8 && empty8 == 0 ||
-
-          empty3 == empty6 && empty6 == empty9 && empty9 == 0 ||
-
-          empty1 == empty5 && empty5 == empty9 && empty9 == 0 ||
-
-          empty3 == empty5 && empty5 == empty7 && empty7 == 0) {
-
-          alert("Jogador 2: Você ganhou!!!");
-
-          history.go(0)
+          whogoesnow = "Jogador 1"
 
         }
 
+        function win() {
 
-        if (empty1 == empty2 && empty2 == empty3 && empty3 == 1 ||
+          if (empty1 == empty2 && empty2 == empty3 && empty3 == 0 ||
 
-          empty4 == empty5 && empty5 == empty6 && empty6 == 1 ||
+            empty4 == empty5 && empty5 == empty6 && empty6 == 0 ||
 
-          empty7 == empty8 && empty8 == empty9 && empty9 == 1 ||
+            empty7 == empty8 && empty8 == empty9 && empty9 == 0 ||
 
-          empty1 == empty4 && empty4 == empty7 && empty7 == 1 ||
+            empty1 == empty4 && empty4 == empty7 && empty7 == 0 ||
 
-          empty2 == empty5 && empty5 == empty8 && empty8 == 1 ||
+            empty2 == empty5 && empty5 == empty8 && empty8 == 0 ||
 
-          empty3 == empty6 && empty6 == empty9 && empty9 == 1 ||
+            empty3 == empty6 && empty6 == empty9 && empty9 == 0 ||
 
-          empty1 == empty5 && empty5 == empty9 && empty9 == 1 ||
+            empty1 == empty5 && empty5 == empty9 && empty9 == 0 ||
 
-          empty3 == empty5 && empty5 == empty7 && empty7 == 1) {
+            empty3 == empty5 && empty5 == empty7 && empty7 == 0) {
 
-          alert("Jogador 1: Você ganhou !!!");
+            alert("Jogador 2: Você ganhou!!!");
 
-          history.go(0)
-
-        }
-
-      }
-
-      function turnchange(t) {
-
-        if (change == 1) {
-
-          if (t == 0) {
-
-            t = 1;
-
-            whogoesnow = "Jogador " + 1
+            history.go(0)
 
           }
+
+
+          if (empty1 == empty2 && empty2 == empty3 && empty3 == 1 ||
+
+            empty4 == empty5 && empty5 == empty6 && empty6 == 1 ||
+
+            empty7 == empty8 && empty8 == empty9 && empty9 == 1 ||
+
+            empty1 == empty4 && empty4 == empty7 && empty7 == 1 ||
+
+            empty2 == empty5 && empty5 == empty8 && empty8 == 1 ||
+
+            empty3 == empty6 && empty6 == empty9 && empty9 == 1 ||
+
+            empty1 == empty5 && empty5 == empty9 && empty9 == 1 ||
+
+            empty3 == empty5 && empty5 == empty7 && empty7 == 1) {
+
+            alert("Jogador 1: Você ganhou !!!");
+
+            history.go(0)
+
+          }
+
+        }
+
+        function turnchange(t) {
+
+          if (change == 1) {
+
+            if (t == 0) {
+
+              t = 1;
+
+              whogoesnow = "Jogador " + 1
+
+            }
+
+            else {
+
+              t = 0;
+
+              whogoesnow = "Jogador " + 2
+
+            }
+
+          }
+
 
           else {
 
-            t = 0;
-
-            whogoesnow = "Jogador " + 2
+            t = t;
 
           }
 
-        }
+          change = 1
 
-
-        else {
-
-          t = t;
+          return (t);
 
         }
 
-        change = 1
-
-        return (t);
-
-      }
-
-      function changing(clicked) {
-
-        if (clicked == 1) {
-
-          spot = empty1;
-        }
-
-        if (clicked == 2) {
-
-          spot = empty2;
-        }
-
-        if (clicked == 3) {
-
-          spot = empty3;
-        }
-
-        if (clicked == 4) {
-
-          spot = empty4;
-        }
-
-        if (clicked == 5) {
-
-          spot = empty5;
-        }
-
-        if (clicked == 6) {
-
-          spot = empty6;
-        }
-
-        if (clicked == 7) {
-
-          spot = empty7;
-        }
-
-        if (clicked == 8) {
-
-          spot = empty8;
-        }
-
-        if (clicked == 9) {
-
-          spot = empty9;
-        }
-
-        if (spot == -1) {
-
-          if (t == 0) {
-
-            xo = "  O  ";
-
-            spot = 0
-
-          }
-
-          else {
-
-            xo = "  X  ";
-
-            spot = 1
-
-          }
+        function changing(clicked) {
 
           if (clicked == 1) {
-            empty1 = spot;
+
+            spot = empty1;
           }
 
           if (clicked == 2) {
-            empty2 = spot;
+
+            spot = empty2;
           }
 
           if (clicked == 3) {
-            empty3 = spot;
+
+            spot = empty3;
           }
 
           if (clicked == 4) {
-            empty4 = spot;
+
+            spot = empty4;
           }
 
           if (clicked == 5) {
-            empty5 = spot;
+
+            spot = empty5;
           }
 
           if (clicked == 6) {
-            empty6 = spot;
+
+            spot = empty6;
           }
 
           if (clicked == 7) {
-            empty7 = spot;
+
+            spot = empty7;
           }
 
           if (clicked == 8) {
-            empty8 = spot;
+
+            spot = empty8;
           }
 
           if (clicked == 9) {
-            empty9 = spot;
+
+            spot = empty9;
           }
+
+          if (spot == -1) {
+
+            if (t == 0) {
+
+              xo = "  O  ";
+
+              spot = 0
+
+            }
+
+            else {
+
+              xo = "  X  ";
+
+              spot = 1
+
+            }
+
+            if (clicked == 1) {
+              empty1 = spot;
+            }
+
+            if (clicked == 2) {
+              empty2 = spot;
+            }
+
+            if (clicked == 3) {
+              empty3 = spot;
+            }
+
+            if (clicked == 4) {
+              empty4 = spot;
+            }
+
+            if (clicked == 5) {
+              empty5 = spot;
+            }
+
+            if (clicked == 6) {
+              empty6 = spot;
+            }
+
+            if (clicked == 7) {
+              empty7 = spot;
+            }
+
+            if (clicked == 8) {
+              empty8 = spot;
+            }
+
+            if (clicked == 9) {
+              empty9 = spot;
+            }
+
+          }
+
+          else {
+
+            if (spot == 0) {
+              xo = "  O  ";
+            }
+
+            if (spot == 1) {
+              xo = "  X  ";
+            }
+
+            change = 0
+
+          }
+
+          return (xo);
 
         }
 
-        else {
 
-          if (spot == 0) {
-            xo = "  O  ";
-          }
 
-          if (spot == 1) {
-            xo = "  X  ";
-          }
 
-          change = 0
+
+        function change_b1(form) {
+          clicked = 1;
+
+          changing(clicked);
+
+          t = turnchange(t);
+
+          form.b1.value = xo;
+
+          form.whoseturn.value = whogoesnow
+
+          win();
+
+          return;
 
         }
 
-        return (xo);
 
-      }
+        function change_b2(form) {
 
+          clicked = 2;
 
+          changing(clicked);
 
+          form.b2.value = xo;
 
+          t = turnchange(t);
 
-      function change_b1(form) {
-        clicked = 1;
+          form.whoseturn.value = whogoesnow
 
-        changing(clicked);
+          win();
 
-        t = turnchange(t);
+          return;
 
-        form.b1.value = xo;
+        }
 
-        form.whoseturn.value = whogoesnow
+        function change_b3(form) {
 
-        win();
+          clicked = 3;
 
-        return;
+          changing(clicked);
 
-      }
+          form.b3.value = xo;
 
+          t = turnchange(t);
 
-      function change_b2(form) {
+          form.whoseturn.value = whogoesnow
 
-        clicked = 2;
+          win();
 
-        changing(clicked);
+          return;
 
-        form.b2.value = xo;
+        }
 
-        t = turnchange(t);
+        function change_b4(form) {
 
-        form.whoseturn.value = whogoesnow
+          clicked = 4;
 
-        win();
+          changing(clicked);
 
-        return;
+          form.b4.value = xo;
 
-      }
+          t = turnchange(t);
 
-      function change_b3(form) {
+          form.whoseturn.value = whogoesnow
 
-        clicked = 3;
+          win();
 
-        changing(clicked);
+          return;
 
-        form.b3.value = xo;
+        }
+        function change_b5(form) {
 
-        t = turnchange(t);
+          clicked = 5;
 
-        form.whoseturn.value = whogoesnow
+          changing(clicked);
 
-        win();
+          form.b5.value = xo;
 
-        return;
+          t = turnchange(t);
 
-      }
+          form.whoseturn.value = whogoesnow
 
-      function change_b4(form) {
+          win();
 
-        clicked = 4;
+          return;
 
-        changing(clicked);
+        }
+        function change_b6(form) {
 
-        form.b4.value = xo;
+          clicked = 6;
 
-        t = turnchange(t);
+          changing(clicked);
 
-        form.whoseturn.value = whogoesnow
+          form.b6.value = xo;
 
-        win();
+          t = turnchange(t);
 
-        return;
+          form.whoseturn.value = whogoesnow
 
-      }
-      function change_b5(form) {
+          win();
 
-        clicked = 5;
+          return;
 
-        changing(clicked);
+        }
+        function change_b7(form) {
 
-        form.b5.value = xo;
+          clicked = 7;
 
-        t = turnchange(t);
+          changing(clicked);
 
-        form.whoseturn.value = whogoesnow
+          form.b7.value = xo;
 
-        win();
+          t = turnchange(t);
 
-        return;
+          form.whoseturn.value = whogoesnow
 
-      }
-      function change_b6(form) {
+          win();
 
-        clicked = 6;
+          return;
 
-        changing(clicked);
+        }
+        function change_b8(form) {
 
-        form.b6.value = xo;
+          clicked = 8;
 
-        t = turnchange(t);
+          changing(clicked);
 
-        form.whoseturn.value = whogoesnow
+          form.b8.value = xo;
 
-        win();
+          t = turnchange(t);
 
-        return;
+          form.whoseturn.value = whogoesnow
 
-      }
-      function change_b7(form) {
+          win();
 
-        clicked = 7;
+          return;
 
-        changing(clicked);
+        }
+        function change_b9(form) {
 
-        form.b7.value = xo;
+          clicked = 9;
 
-        t = turnchange(t);
+          changing(clicked);
 
-        form.whoseturn.value = whogoesnow
+          form.b9.value = xo;
 
-        win();
+          t = turnchange(t);
 
-        return;
+          form.whoseturn.value = whogoesnow
 
-      }
-      function change_b8(form) {
+          win();
 
-        clicked = 8;
+          return;
 
-        changing(clicked);
+        }
 
-        form.b8.value = xo;
-
-        t = turnchange(t);
-
-        form.whoseturn.value = whogoesnow
-
-        win();
-
-        return;
-
-      }
-      function change_b9(form) {
-
-        clicked = 9;
-
-        changing(clicked);
-
-        form.b9.value = xo;
-
-        t = turnchange(t);
-
-        form.whoseturn.value = whogoesnow
-
-        win();
-
-        return;
-
-      }
-
-    </script>
-  </p>
-  <div align="center">
-    <center>
-      <table border="0" bgcolor="#000000" width="763">
-        <tr>
-          <td bgcolor="#000033">
-            <div align="center"><strong>
-                <font color="#FFFFFF" size="4" face="Arial"><em>WEB
-                    MUNDI</em></font>
-                <font color="#000000" size="4" face="Arial">
-                  ................................................................</font>
-                <font size="4" face="Arial" color="#FFFFFF">JAVA
-                  SCRIPTS</font>
-              </strong></div>
-          </td>
-        </tr>
-      </table>
-    </center>
-  </div>
-
-  <p align="center"><em>
-      <font color="#000080" face="Arial Black"><big><big>
-            <font size="5">Jogo
-              da Velha</font>
-          </big></big></font>
-    </em></p>
-
-  <p align="center">
-    <font face="Arial"><strong>Autor: <a href="mailto:tony10@geocities.com">Tony
-          Schaffert</a> </strong></font>
-  </p>
-
-  <p align="center">
-    <script name="JavaScript">
-
-
-      variables();
-
-
-    </script>
-  </p>
-
-  <form>
+      </script>
+    </p>
     <div align="center">
       <center>
-        <p><input type="button" name="whoseturn" value="Jogador 1"> </p>
-      </center>
-    </div>
-    <div align="center">
-      <center>
-        <table border="0">
+        <table border="0" bgcolor="#000000" width="763">
           <tr>
-            <td><input type="button" name="b1" value="      " onclick="change_b1(this.form)"> </td>
-            <td><input type="button" name="b2" value="      " onclick="change_b2(this.form)"> </td>
-            <td><input type="button" name="b3" value="      " onclick="change_b3(this.form)"> </td>
-          </tr>
-          <tr>
-            <td><input type="button" name="b4" value="      " onclick="change_b4(this.form)"> </td>
-            <td><input type="button" name="b5" value="      " onclick="change_b5(this.form)"> </td>
-            <td><input type="button" name="b6" value="      " onclick="change_b6(this.form)"> </td>
-          </tr>
-          <tr>
-            <td><input type="button" name="b7" value="      " onclick="change_b7(this.form)"> </td>
-            <td><input type="button" name="b8" value="      " onclick="change_b8(this.form)"> </td>
-            <td><input type="button" name="b9" value="      " onclick="change_b9(this.form)"> </td>
+            <td bgcolor="#000033">
+              <div align="center"><strong>
+                  <font color="#FFFFFF" size="4" face="Arial"><em>WEB
+                      MUNDI</em></font>
+                  <font color="#000000" size="4" face="Arial">
+                    ................................................................</font>
+                  <font size="4" face="Arial" color="#FFFFFF">JAVA
+                    SCRIPTS</font>
+                </strong></div>
+            </td>
           </tr>
         </table>
       </center>
     </div>
-    <div align="center">
-      <center>
-        <p><input type="button" value="NOVO JOGO" onclick="history.go(0)"> </p>
-      </center>
-    </div>
-  </form>
-</body>
+
+    <p align="center"><em>
+        <font color="#000080" face="Arial Black"><big><big>
+              <font size="5">Jogo
+                da Velha</font>
+            </big></big></font>
+      </em></p>
+
+    <p align="center">
+      <font face="Arial"><strong>Autor: <a href="mailto:tony10@geocities.com">Tony
+            Schaffert</a> </strong></font>
+    </p>
+
+    <p align="center">
+      <script name="JavaScript">
+
+
+        variables();
+
+
+      </script>
+    </p>
+
+    <form>
+      <div align="center">
+        <center>
+          <p><input type="button" name="whoseturn" value="Jogador 1"> </p>
+        </center>
+      </div>
+      <div align="center">
+        <center>
+          <table border="0">
+            <tr>
+              <td><input type="button" name="b1" value="      " onclick="change_b1(this.form)"> </td>
+              <td><input type="button" name="b2" value="      " onclick="change_b2(this.form)"> </td>
+              <td><input type="button" name="b3" value="      " onclick="change_b3(this.form)"> </td>
+            </tr>
+            <tr>
+              <td><input type="button" name="b4" value="      " onclick="change_b4(this.form)"> </td>
+              <td><input type="button" name="b5" value="      " onclick="change_b5(this.form)"> </td>
+              <td><input type="button" name="b6" value="      " onclick="change_b6(this.form)"> </td>
+            </tr>
+            <tr>
+              <td><input type="button" name="b7" value="      " onclick="change_b7(this.form)"> </td>
+              <td><input type="button" name="b8" value="      " onclick="change_b8(this.form)"> </td>
+              <td><input type="button" name="b9" value="      " onclick="change_b9(this.form)"> </td>
+            </tr>
+          </table>
+        </center>
+      </div>
+      <div align="center">
+        <center>
+          <p><input type="button" value="NOVO JOGO" onclick="history.go(0)"> </p>
+        </center>
+      </div>
+    </form>
+  </body>
 
 </html>

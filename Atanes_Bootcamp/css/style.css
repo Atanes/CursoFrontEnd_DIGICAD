@@ -1,7 +1,7 @@
 /* || general styles */
 
 html {
-  font-family: 'helvetica neue', helvetica, arial, sans-serif;
+  font-family: "helvetica neue", helvetica, arial, sans-serif;
 }
 
 body {
@@ -9,8 +9,9 @@ body {
   margin: 0 auto;
 }
 
-h1, h2 {
-  font-family: 'Faster One', cursive;
+h1,
+h2 {
+  font-family: "Faster One", cursive;
 }
 
 /* header styles */
@@ -45,4 +46,12 @@ h2 {
   font-size: 2.5rem;
   letter-spacing: -5px;
   margin-bottom: 10px;
+}
+
+.textoFormatado {
+  color: darkorange;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: bolder;
+  font-style: italic;
 }

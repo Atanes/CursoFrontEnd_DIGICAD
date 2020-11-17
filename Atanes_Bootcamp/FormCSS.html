@@ -1,35 +1,42 @@
 <!doctype html>
-<html xmlns="http://www.w3.org/1999/xhtml"> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+
 	<head>
-		<title>--Formul�rio Contato--</title> 
+		<title>--Formulário Contato--</title>
 		<meta charset=utf-8>
 		<link href="css/ContatoEstilo.css" rel="stylesheet" media="all" />
-		<script type="text/javascript" src="jquery.mask.min.js"/></script>
+		<script src="js/jquery-3.4.1.min.js"></script>
+		<script type="text/javascript" src="js/jquery.mask.min.js"></script>
 		<script type="text/javascript" src="js/mensagem.js"></script>
-	</head> 
-	<body> 
-	<form name="meu_form"> 
-		<h1>Entre em contato</h1> 
-		<p class="nome"> 
-			<label for="nome">Nome: </label>
-			<input type="text" id="nomeid" placeholder="Tiago Vale" required="required" name="nome" /> 	 
-		</p>
-		<p class="fone"> 
-			<label for="txttelefone">Fone: </label>
-			<input type="phone" required name="tel" pattern="(/d/d)[s]/d/d/d/d-/d/d/d/d"/>
-			<script type="text/javascript">$("#txttelefone").mask("(00) 0000-00009");</script>
-		</p>
-		<p> 
-			<label for="email">Email: </label>
-			<input type="email" id="emailid" placeholder="fulano@mail.com" name="email" />
-		</p> 
-		<p>
-			<textarea placeholder="Deixe sua opni�o"></textarea>
-		</p> 
-		<p class="submit">
-			<input type="submit" onclick="Enviar();" value="Enviar" />
-		</p>
-	</form>
-	</body> 
-</html>
+		<script>
+			$(document).ready(function () {
+				$('#tel').mask('(00) 0000-00009');
+			});
+		</script>
+	</head>
 
+	<body>
+		<form name="meu_form">
+			<h1>Entre em contato</h1>
+			<p class="nome">
+				<label for="nome">Nome: </label>
+				<input type="text" id="nomeid" placeholder="Tiago Vale" required="required" name="nome" />
+			</p>
+			<p class="fone">
+				<label for="txttelefone">Fone: </label>
+				<input type="phone" required id="tel" />
+			</p>
+			<p>
+				<label for="email">Email: </label>
+				<input type="email" id="emailid" placeholder="fulano@mail.com" name="email" />
+			</p>
+			<p>
+				<textarea placeholder="Deixe sua opnião"></textarea>
+			</p>
+			<p class="submit">
+				<input type="submit" onclick="Enviar();" value="Enviar" />
+			</p>
+		</form>
+	</body>
+
+</html>
