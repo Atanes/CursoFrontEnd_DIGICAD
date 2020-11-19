@@ -24,5 +24,19 @@
       "altText":
         "Esse gato adora um carinho e não sai do colo da sua dona",
       "codeNames": ["Leão", "Lion", "King"]
+    },
+    {
+      "id": 4,
+      "imageLink": "https://image.freepik.com/fotos-gratis/close-up-de-gatinho-cinza-na-natureza_167946-121.jpg",
+      "altText":
+        "Branco como a neve esse gato encanta até os corações mais duros..",
+      "codeNames": ["Floco de Neve", "Snow", "Branquinho"]
+    },
+    {
+      "id": 5,
+      "imageLink": "https://image.freepik.com/fotos-gratis/closeup-tiro-de-um-lindo-gatinho-preto-isolado-no-branco_181624-8157.jpg",
+      "altText":
+        "Negro ou preto não importa, o que ele quer mesmo é brincar..",
+      "codeNames": ["Neguinho", "Black", "Sombra"]
     }
   ]
