@@ -44,6 +44,7 @@
 			var xmlhttp = new XMLHttpRequest();
 
 			xmlhttp.open("GET", "cd_catalog.xml", true);
+			xmlhttp.setRequestHeader('Content-Type', 'text/plain');
 			xmlhttp.send();
 
 			xmlhttp.onreadystatechange = function () {

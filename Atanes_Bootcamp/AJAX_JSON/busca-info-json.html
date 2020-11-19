@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <h1 id="titulo"></h1>
+        <img src="#" alt="" id="imagemPrincipal">
+        <p id="sumario"></p>
+        <p id="site"></p>
+        <p id="demo"></p>
+
+        <script>
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    montaPagina(this.responseText);
+                }
+            };
+            xmlhttp.open("GET", "http://api.tvmaze.com/search/shows?q=batman", true);
+            xmlhttp.send();
+
+            function montaPagina(json) {
+                var myObj = JSON.parse(json);
+                console.log(myObj.length);
+                for (var i = 0; i < myObj.length; i++) {
+                    document.getElementById("demo").innerHTML += myObj[i]['score']
+                    document.getElementById("demo").innerHTML += "<br>" + myObj[i]['show']['id'] + "<br>";
+                    document.getElementById("demo").innerHTML += "<br>" + myObj[i]['show']['summary'] + "<br>";
+                }
+                var imagem = new Image;
+                imagem.src = myObj[3]['show']['image']['medium'];
+                document.getElementById('imagemPrincipal').src = imagem.src;
+                document.getElementById('titulo').innerHTML = myObj[3]['show']['name'];
+                document.getElementById('sumario').innerHTML = myObj[3]['show']['summary'];
+                document.getElementById('site').innerHTML = myObj[3]['show']['url'];
+            }
+        </script>
+    </body>
+
+</html>

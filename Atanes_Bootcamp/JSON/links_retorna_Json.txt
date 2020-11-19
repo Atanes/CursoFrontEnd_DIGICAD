@@ -1,0 +1,6 @@
+Links para arquivos / conteudo JSON
+
+https://jsonplaceholder.typicode.com/posts/
+https://www.freecodecamp.org/json/cats.json
+http://api.tvmaze.com/search/shows?q=batman
+

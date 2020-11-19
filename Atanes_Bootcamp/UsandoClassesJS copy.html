@@ -3,9 +3,12 @@
 <html>
 
 	<head>
+		<link rel="stylesheet" href="bootstrap-4.4.1-dist/css/bootstrap.min.css" type="text/css">
+		<link rel="stylesheet" href="bootstrap-4.4.1-dist/css/bootstrap.css" type="text/css">
 		<title>Trabalhando com classes em JS</title>
 		<script>
-			var numero = new Array();
+			var table = document.getElementById('myTable');
+			var vetorAlunos = new Array();
 			class Aluno {
 				id;
 				nome;
@@ -51,67 +54,86 @@
 
 			function LimpaCampos() {
 				document.fCadastro.reset();
-				document.getElementById("nome").focus();
+				document.getElementById("inputNome").focus();
 			}
 
 			function Cadastrar() {
 				aluno = new Aluno();
-				aluno.setNome(document.getElementById("nome").value);
-				aluno.setMatricula(document.getElementById("matricula").value);
-				aluno.setIdade(document.getElementById("idade").value);
-				aluno.setId(numero.length + 1);
-				numero.unshift(aluno);
+				aluno.setNome(document.getElementById("inputNome").value);
+				aluno.setMatricula(document.getElementById("inputMatricula").value);
+				aluno.setIdade(document.getElementById("inputIdade").value);
+				aluno.setId(vetorAlunos.length + 1);
+				vetorAlunos.unshift(aluno);
 				LimpaCampos();
-				document.getElementById("qtd_registros").innerHTML = "Quantidade de registros realizados: " + numero.length;
+				document.getElementById("qtd_registros").innerHTML = "Quantidade de registros realizados: " + vetorAlunos.length;
 			}
 
 			function Mostrar() {
+				DeleteRows();
 				var myHtmlContent = '';
 				var tableRef = document.getElementById('myTable').getElementsByTagName('tbody')[0];
 				var newRow = tableRef.insertRow(tableRef.rows.length);
-
-				for (var i = 0; i < numero.length; i++) {
-					if (numero[i] != null) {
-						myHtmlContent = numero[i].imprime();
+				for (var i = vetorAlunos.length; i >= 0; i--) {
+					if (vetorAlunos[i] != null) {
+						myHtmlContent = vetorAlunos[i].imprime();
 						newRow = tableRef.insertRow(tableRef.rows.length);
 						newRow.innerHTML = myHtmlContent;
 					}
 
 				}
 				document.getElementById('myTable').hidden = false;
-			}	 
+			}
+			function DeleteRows() {
+				var rowCount = document.getElementById('myTable').rows.length;
+				for (var i = rowCount - 1; i > 0; i--) {
+					document.getElementById('myTable').deleteRow(i);
+				}
+			}
+
 		</script>
 
 	</head>
 
 	<body>
-		<form name="fCadastro">
-			<labe>Nome:</labe>
-			<input type="text" id="nome">
-			<labe>Matricula:</labe>
-			<input type="text" id="matricula">
-			<labe>Idade:</labe>
-			<input type="text" id="idade">
-			<input type="Button" name="cadastrar" value="Cadastrar" onclick="Cadastrar()">
-			<input type="Button" name="mostrar" value="Mostrar" onclick="Mostrar()">
-		</form>
-		<div id="registros"></div>
-		<p id="qtd_registros"></p>
-		<table class="table table-striped" hidden id="myTable">
-			<thead>
-				<tr>
-					<th scope="col">#</th>
-					<th scope="col">Nome</th>
-					<th scope="col">Matricula</th>
-					<th scope="col">Idade</th>
-				</tr>
-			</thead>
-			<tbody>
+		<div class="container">
+			<h1>Cadastro de Alunos</h1>
+			<hr>
+			<form name="fCadastro">
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						<label for="inputNome">Nome:</label>
+						<input type="text" class="form-control" id="inputNome">
+					</div>
+					<div class="form-group col-md-6">
+						<label for="inputMatricula">Matricula:</label>
+						<input type="text" class="form-control" id="inputMatricula">
+					</div>
+					<div class="form-group col-md-6">
+						<label for="inputIdade">Idade:</label>
+						<input type="text" class="form-control" id="inputIdade">
+					</div>
+				</div>
+				<input type="button" onclick="Cadastrar()" class="btn btn-primary" value="Cadastrar">
+				<input type="button" onclick="Mostrar()" class="btn btn-primary" value="Mostrar">
 
-			</tbody>
-		</table>
+			</form>
+			<div id="registros"></div>
+			<p id="qtd_registros"></p>
+			<table class="table table-striped" hidden id="myTable">
+				<thead>
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col">Nome</th>
+						<th scope="col">Matricula</th>
+						<th scope="col">Idade</th>
+					</tr>
+				</thead>
+				<tbody>
 
+				</tbody>
+			</table>
 
+		</div>
 	</body>
 
 </html>

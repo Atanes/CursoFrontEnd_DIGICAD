@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Carrega endereços</title>
+    </head>
+
+    <body>
+        <div>
+            <h1>Lista de endereços de São Domingos/RS</h1>
+            <input type="button" value="Clique no botão para ver o retorno em JSON"
+                onclick="load('viacep.com.br/ws/RS/Porto%20Alegre/Domingos/json/', minhaFuncao)">
+
+        </div>
+        <div id="resultado"></div>
+        <div id="info"></div>
+
+        <script>
+
+            function load(url, x) {
+                var url = 'https://' + url;
+                var xhr = new XMLHttpRequest();
+
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4 && this.status === 200)  {
+                        minhaFuncao(this);
+                    }
+                }
+
+                xhr.open('GET', url, true);
+                xhr.send();
+            }
+            function minhaFuncao(xhttp) {
+                document.getElementById("resultado").innerHTML = xhttp.responseText;
+                console.log(xhttp.responseText);
+                var lista = eval(xhttp.responseText);
+                document.getElementById("info").innerHTML = lista[0].logradouro;
+            }
+        </script>
+    </body>
+
+</html>
