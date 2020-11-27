@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import api from '../../EXTERNA-API/api';
 
 export default class Main extends Component {
 

@@ -1,9 +1,9 @@
 import React from 'react';
 import './corpo.css';
 
-const Corpo = () => (
+const Corpo = (props) => (
     <div id="title-body">
-        <h1>Curso ReactJS - DIGICAD</h1>
+        <h1>Curso ReactJS - {props.empresa}</h1>
         <img src="../imagens/mundomelhor.png"></img>
     </div>
 );
