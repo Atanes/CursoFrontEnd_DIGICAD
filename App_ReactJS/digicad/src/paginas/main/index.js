@@ -3,9 +3,8 @@ import React, { Component } from 'react';
 export default class Main extends Component {
 
     constructor() {
-        super();
-
-        this.state = {
+          // eslint-disable-next-line no-this-before-super
+          this.state = {
             'herois': []
         };
 

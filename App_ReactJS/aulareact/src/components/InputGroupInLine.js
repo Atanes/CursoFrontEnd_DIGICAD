@@ -6,7 +6,7 @@ const InputGroupInLine = (props) => (
             <label htmlFor={props.id} className="col-form-label">{props.textoLabel}</label>
         </div>
         <div className={props.colInput}>
-            <input type="email" className="form-control" id={props.id} />
+            <input type={props.tipo} className="form-control" id={props.id} />
         </div>
     </div>
 );
